@@ -3,21 +3,12 @@ import { AuthContext } from "../Auth/AuthProvider";
 import LeftPage from "../../Pages/LeftPage/LeftPage";
 import RightPage from "../../Pages/RightPage/RightPage";
 import { useLoaderData } from "react-router-dom";
-import Card from "./Card";
+import Card from "../Items/Card";
 
 const Home = () => {
     const user = useContext(AuthContext);
     const [dataLength, setDataLength] = useState(6);
-
-    let foods = [];
-    try {
-        foods = useLoaderData();
-    } 
-    catch (error) {
-        console.error("Failed to load data:", error);
-    }
-
-    const validFoods = Array.isArray(foods) ? foods : [];
+    const items = useLoaderData();
 
     return (
         <div>
@@ -31,16 +22,14 @@ const Home = () => {
                     {/* Middle Page */}
                     <div className='grid lg:grid-cols-2 gap-4'>
                         {
-                            validFoods.slice(0, dataLength).map(food => (
-                                <Card key={food.id} food={food}></Card>
+                            items.slice(0, dataLength).map(item => (
+                                <Card key={item.id} item={item}></Card>
                             ))
                         }
                     </div>
                     <button
                         className="btn btn-error mt-6 font-bold mx-auto justify-center card px-12 text-xl"
-                        onClick={() => setDataLength(validFoods.length)}
-                    >
-                        Show All
+                        onClick={() => setDataLength(items.length)}>  Show All
                     </button>
                 </div>
 

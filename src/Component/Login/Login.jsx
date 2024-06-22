@@ -55,9 +55,7 @@ const Login = () => {
             .catch(error => {
                 console.error(error.message);
             })
-
-    }
-
+        }
 
     //Google Pop-up
     const handleSign = () => {
@@ -99,14 +97,7 @@ const Login = () => {
 
     return (
         <div>
-            {/* {googleUser &&
-                <>
-                    <p className="text-lg text-red-500">User: {googleUser.displayName}</p>
-                    <p>{googleUser.email}</p>
-                </>
-            } */}
-
-            <div className="hero ">
+            <div className="hero">
                 <div className="hero-content ">
                     <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-lime-200 border-4 border-b-lime-700">
                         <h1 className="text-5xl font-bold mx-auto p-4 text-red-800">Login Here</h1>

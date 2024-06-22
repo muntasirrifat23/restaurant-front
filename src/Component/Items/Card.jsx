@@ -1,10 +1,11 @@
 import { FaArrowRight } from "react-icons/fa";
 import "./Card.css";
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 
-const Card = ({ food }) => {
-    const { name, price, short_details, image, origin, id } = food;
-    // const {name, price, short_details,long_details, rating,origin,image} =food;
+const Card = ({ item }) => {
+    const { name, price, short_details, image, origin, id } = item;
+    // const {name, price, short_details,long_details, rating,origin,image} =item;
     return (
         <div >
             <div className="card card-compact shadow-xl  bg-lime-200 border-4 border-b-lime-700">
@@ -26,6 +27,17 @@ const Card = ({ food }) => {
             </div>
         </div>
     );
+};
+
+Card.propTypes = {
+    item: PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        name: PropTypes.string.isRequired,
+        price: PropTypes.number.isRequired,
+        short_details: PropTypes.string.isRequired,
+        image: PropTypes.string.isRequired,
+        origin: PropTypes.string.isRequired,
+    }).isRequired,
 };
 
 export default Card;

@@ -9,14 +9,14 @@ const Register = () => {
     const auth = getAuth(app);
     const [userError, setUserError] = useState('');
     const [show, setShow] = useState(false);
-
     const { createUser } = useContext(AuthContext);
 
     const handleRegister = e => {
         e.preventDefault();
+        const name = e.target.name.value;
         const email = e.target.email.value;
         const password = e.target.password.value;
-        console.log(email, password);
+        console.log(name, email, password);
         setUserError('');
 
         if (password.length < 6) {
@@ -47,11 +47,17 @@ const Register = () => {
 
     return (
         <div>
-            <div className="hero min-h-screen">
-                <div className="hero-content flex-col bg-blue-200  rounded-xl">
+            <div className="hero">
+                <div className="hero-content">  
+                    <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-blue-200">
                     <h1 className="text-5xl font-bold mx-auto p-4">Registration</h1>
-                    <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                         <form onSubmit={handleRegister} className="card-body">
+                        <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text font-bold">Name</span>
+                                </label>
+                                <input type="text" name="name" placeholder="Enter Full Name" className="input input-bordered" required />
+                            </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text font-bold">Email</span>
@@ -73,7 +79,6 @@ const Register = () => {
 
                                     </span>
                                 </p>
-
                                 
                             </div>
                             <div className="form-control mt-6">
@@ -86,7 +91,6 @@ const Register = () => {
                             </p>
                             <p>Have An Account? Do<Link to='/login' className="ml-1  text-blue-700 font-semibold">Login</Link></p>
                         </form>
-
                     </div>
                 </div>
             </div>
