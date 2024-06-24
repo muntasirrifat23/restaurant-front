@@ -30,15 +30,13 @@ const router = createBrowserRouter([
         element:<Home></Home>
       },
       {
-        path:'/food/:id',        
-        // loader:({params})=>fetch(`../public/items/${params.id}.json`),
-        loader:()=>fetch(`/public/items.json`),
+        path: '/items/:id',
         element: <Details></Details>,
-
-        // element:<PrivateRoute> <Details></Details> </PrivateRoute> //notDone
-      }, 
+        loader: ({ params }) => fetch(`http://localhost:5000/item/${params.id}`),
+         //   // element:<PrivateRoute> <Details></Details> </PrivateRoute> //notDone
+      },      
       {
-        path:'/item',
+        path:'/items',
         loader: ()=>fetch('/public/items.json'),
         element:<Items></Items>
       },

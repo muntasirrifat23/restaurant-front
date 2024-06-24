@@ -15,7 +15,7 @@ const Header = () => {
 
     const NavLink = <p className="font-bold lg:flex text-xl">
         <li><Link to='/'>Home</Link> </li>
-        <li><Link to='/item'>Items</Link> </li>
+        <li><Link to='/items'>Items</Link> </li>
         <li><Link to='/cart'>Cart</Link> </li>
         <li><Link to='/payment'>Payment</Link> </li>
         <li><Link to='/login'>Login</Link></li>

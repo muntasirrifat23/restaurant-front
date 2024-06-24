@@ -22,7 +22,8 @@ const Card = ({ item }) => {
                     </div>
                     <div className="card-actions justify-center">
                         <button className="btn bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white font-bold">
-                            <Link to={`/food/${id}`} className="flex gap-2 mx-2">Details <FaArrowRight />
+                            <Link to={`/items/${id}`} className="flex gap-2 mx-2">
+                            Details <FaArrowRight />
                             </Link> 
                         </button>
                     </div>
