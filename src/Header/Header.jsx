@@ -6,7 +6,6 @@ import Marquee from "react-fast-marquee";
 import moment from 'moment';
 
 const Header = () => {
-
     const { user, logOut } = useContext(AuthContext);
     const handleOut = () => {
         logOut()
@@ -19,7 +18,6 @@ const Header = () => {
         <li><Link to='/item'>Items</Link> </li>
         <li><Link to='/cart'>Cart</Link> </li>
         <li><Link to='/payment'>Payment</Link> </li>
-        {/* <li><Link to='/details'>Details</Link> </li> */}
         <li><Link to='/login'>Login</Link></li>
         <li><Link to='/register'>Registration</Link></li>
     </p>
@@ -28,7 +26,7 @@ const Header = () => {
         <div>
             <div className="text-center ">
                 {/* <img src={pic} className="mx-auto"/> */}
-                <p className="text-purple-800 italic font-semibold text-4xl  underline ">Premium Food Court
+                <p className="text-purple-800 italic font-semibold text-4xl underline ">Premium Food Court
                 </p>
                 
                 <p className="font-semibold text-xl mt-2 mb-2">
@@ -38,7 +36,7 @@ const Header = () => {
                 Our food court boasts a variety of delicious options, from Asian cuisine to pizza and sandwiches. With quick service and plenty of seating, it is the perfect spot to grab a bite on the go or enjoy a leisurely meal with friends and family. Come hungry and leave satisfied!
                 </Marquee>
             </div>
-            <div className="navbar bg-base-100">
+            <div className="navbar bg-lime-200">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -49,7 +47,6 @@ const Header = () => {
                         </ul>
                     </div>
                     <img src={image} alt="" className="h-16 w-20 rounded-2xl" />
-                    {/* <p className=" text-2xl font-bold text-red-600">Food Court</p> */}
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">

@@ -11,7 +11,7 @@ const LeftPage = () => {
         <div className="m-4">
             {/* Food Items */}
             <section>
-            <p className="text-2xl font-bold mx-auto text-center  text-white bg-black p-3 rounded-xl mb-4">Food Items</p>
+            <p className="text-2xl font-bold mx-auto text-center text-white bg-black p-3 rounded-xl mb-4">Food Items</p>
             <div> 
                {/* <p> {items.length}</p>  */}
                {

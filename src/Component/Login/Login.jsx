@@ -15,7 +15,6 @@ const Login = () => {
     const [googleUser, setGoogleUser] = useState(null);
     const [userError, setUserError] = useState('');
     const [show, setShow] = useState(false);
-
     const { signIn } = useContext(AuthContext);
 
     //Reset
@@ -28,8 +27,10 @@ const Login = () => {
         e.preventDefault();
         const email = e.target.email.value;
         const password = e.target.password.value;
-        console.log(email, password);
+        const user ={email,password};
+        console.log(user);
         setUserError('');
+
         if (password.length < 6) {
             setUserError("Password should be at least 6 character");
             return;

@@ -2,6 +2,7 @@ import { FaArrowRight } from "react-icons/fa";
 import "./Card.css";
 import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
+import { FaBangladeshiTakaSign } from "react-icons/fa6";
 
 const Card = ({ item }) => {
     const { name, price, short_details, image, origin, id } = item;
@@ -14,7 +15,9 @@ const Card = ({ item }) => {
                     <h2 className="card-title text-red-600 mx-auto text-2xl ">{name}</h2>
                     <p className="font-bold">{short_details}</p>
                     <div className="flex mt-2 f ont-semibold">
-                        <p>Price: {price}$</p>
+                       <p className="flex">Price:  
+                        <FaBangladeshiTakaSign></FaBangladeshiTakaSign> {price} 
+                    </p> 
                         <p>Origin: {origin}</p>
                     </div>
                     <div className="card-actions justify-center">

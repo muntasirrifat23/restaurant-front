@@ -16,8 +16,24 @@ const Register = () => {
         const name = e.target.name.value;
         const email = e.target.email.value;
         const password = e.target.password.value;
-        console.log(name, email, password);
+        const user ={name, email, password};
+        console.log(user);
         setUserError('');
+        
+        fetch('http://localhost:5000/user', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+        .then(res => res.json())
+        .then( data=>{
+            console.log(data);
+            if(data.insertedId){
+                alert("Food Court Registration Complete");
+            }
+        })
 
         if (password.length < 6) {
             setUserError("Password should be at least 6 character");
@@ -46,7 +62,6 @@ const Register = () => {
     }
 
     return (
-        <div>
             <div className="hero">
                 <div className="hero-content">  
                     <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-blue-200">
@@ -94,7 +109,6 @@ const Register = () => {
                     </div>
                 </div>
             </div>
-        </div>
     );
 };
 
