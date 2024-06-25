@@ -6,6 +6,7 @@
 // import Card from "../Items/Card";
 
 import Banner from "./Banner";
+import HomeFood from "./HomeFood";
 
 
 const Home = () => {
@@ -16,6 +17,10 @@ const Home = () => {
     return (
         <div>
             <Banner></Banner>
+
+            <div>
+                <HomeFood></HomeFood>
+            </div>
             
         </div>
 
