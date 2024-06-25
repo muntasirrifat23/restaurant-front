@@ -9,7 +9,7 @@ import banner5 from '../../../public/Banner/05.jpg'
 const Banner = () => {
     return (
         <div className="h-50">
-            <Carousel className="text-center">
+            <Carousel className="text-center" autoPlay interval={2000} infiniteLoop showThumbs={false} showStatus={false} stopOnHover={false}>
                 <div>
                 <img src={banner2} />
                 </div>

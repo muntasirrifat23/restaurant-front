@@ -6,6 +6,7 @@
 // import Card from "../Items/Card";
 
 import Banner from "./Banner";
+import Chef from "./Chef";
 import HomeFood from "./HomeFood";
 
 
@@ -17,11 +18,8 @@ const Home = () => {
     return (
         <div>
             <Banner></Banner>
-
-            <div>
-                <HomeFood></HomeFood>
-            </div>
-            
+            <HomeFood></HomeFood>
+            <Chef></Chef>
         </div>
 
 

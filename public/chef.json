@@ -1,0 +1,32 @@
+[
+      {
+        "id": 1,
+        "name": "Gordon Ramsay",
+        "pos": "Head Chef",
+        "details": "Gordon Ramsay is a British chef known for his fiery temper and exceptional culinary skills. His Beef Wellington is a signature dish that features perfectly cooked beef wrapped in puff pastry.",
+        "pic": "./Chef/chef1.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Thomas Keller",
+        "pos": "Observe Food Presentation",
+        "details": "Thomas Keller is an American chef, famous for his meticulous approach to cooking and his critically acclaimed restaurants, such as The French Laundry.",
+        "pic": "./Chef/chef2.jpeg"
+      },
+      {
+        "id": 3,
+        "name": "Massimo Bottura",
+        "pos": "Monitor Food Quality ",
+        "details": "Massimo Bottura is an Italian chef and owner of Osteria Francescana, a three-Michelin-star restaurant. His innovative dish, Five Ages of Parmigiano Reggiano",
+        "pic": "./Chef/chef3.jpeg"
+      },
+      {
+        "id": 4,
+        "name": "Alice Waters",
+        "pos": "Present Dishes",
+        "details": "Alice Waters is an American chef and food activist, known for her role in the farm-to-table movement.",
+        "pic": "./Chef/chef4.jpg"
+      }
+    ]
+  
+  

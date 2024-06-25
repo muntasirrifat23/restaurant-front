@@ -3,7 +3,7 @@ import { FaArrowLeft, FaRegStar, FaStar } from "react-icons/fa";
 import Rating from "react-rating";
 import { Link, useParams } from "react-router-dom";
 
-const Details = () => {
+const Details = () => { 
     const { id } = useParams();
     const [details, setDetails] = useState(null);
     useEffect(() => {

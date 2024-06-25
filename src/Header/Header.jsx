@@ -3,7 +3,7 @@ import image from '../../public/main-icon.png'
 import { useContext } from "react";
 import { AuthContext } from "../Component/Auth/AuthProvider";
 import Marquee from "react-fast-marquee";
-import moment from 'moment';
+// import moment from 'moment';
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -13,7 +13,7 @@ const Header = () => {
             .catch()
     }
 
-    const NavLink = <p className="font-bold lg:flex text-xl lg:underline ">
+    const NavLink = <p className="font-bold lg:flex text-xl lg:underline">
         <li><Link to='/'>Home</Link> </li>
         <li><Link to='/items'>Items</Link> </li>
         <li><Link to='/cart'>Cart</Link> </li>
@@ -23,20 +23,21 @@ const Header = () => {
     </p>
 
     return (
-        <div >
+        <div className="fixed z-10 lg:bg-opacity-30 max-w-screen-2xl mx-auto lg:text-black bg-lime-600 opacity-90" >
             <div className="text-center ">
                 {/* <img src={pic} className="mx-auto"/> */}
-                <p className="text-purple-800 italic font-semibold text-4xl underline ">Premium Food Court
-                </p>
+                {/* <p className="text-purple-800 italic font-semibold text-4xl underline ">Premium Food Court
+                </p> */}
                 
-                <p className="font-semibold text-xl mt-2 mb-2">
+                {/* <p className="font-semibold text-xl mt-2 mb-2">
                     {moment().format(' dddd, Do MMMM, YYYY, h:mm A')}
-                </p>
-                <Marquee className="text-red-700 font-semibold">
+                </p> */}
+                <Marquee className="text-white font-semibold lg:bg-lime-600">
                 Our food court boasts a variety of delicious options, from Asian cuisine to pizza and sandwiches. With quick service and plenty of seating, it is the perfect spot to grab a bite on the go or enjoy a leisurely meal with friends and family. Come hungry and leave satisfied!
                 </Marquee>
             </div>
-            <div className="navbar bg-lime-200 fixed z-10 lg:bg-opacity-30 max-w-screen-xl mx-auto lg:text-white">
+            <div className="navbar bg-lime-200 ">
+            {/* <div className="navbar bg-lime-200 fixed z-10 lg:bg-opacity-30 max-w-screen-xl mx-auto lg:text-white"> */}
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
