@@ -25,7 +25,7 @@ const Details = () => {
 
     if (!details) {
         return (
-            <div className="flex items-center justify-center h-screen">
+            <div className="flex items-center justify-center">
                 <div className="flex flex-col items-center">
                     <p className="text-center">Please wait, food details loading...</p>
                     <div className="loading loading-bars loading-lg text-lime-800 mt-4"></div>
