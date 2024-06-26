@@ -7,7 +7,6 @@ import { FaRegEye, FaEyeSlash } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Auth/AuthProvider";
 import { IoLogInOutline } from "react-icons/io5";
-import { Helmet } from "react-helmet";
 
 const Login = () => {
     const auth = getAuth(app);
@@ -16,10 +15,12 @@ const Login = () => {
     const [googleUser, setGoogleUser] = useState(null);
     const [userError, setUserError] = useState('');
     const [show, setShow] = useState(false);
+
     const { signIn } = useContext(AuthContext);
 
     //Reset
     const [, setFormData] = useState({ email: '', password: '' });
+
     const navigate = useNavigate();
 
     //Log In
@@ -27,10 +28,8 @@ const Login = () => {
         e.preventDefault();
         const email = e.target.email.value;
         const password = e.target.password.value;
-        const user ={email,password};
-        console.log(user);
+        console.log(email, password);
         setUserError('');
-
         if (password.length < 6) {
             setUserError("Password should be at least 6 character");
             return;
@@ -56,7 +55,9 @@ const Login = () => {
             .catch(error => {
                 console.error(error.message);
             })
-        }
+
+    }
+
 
     //Google Pop-up
     const handleSign = () => {
@@ -98,11 +99,8 @@ const Login = () => {
 
     return (
         <div>
-            <Helmet>
-            <title>Food Court | Login</title>
-            </Helmet>
-            <div className="hero">
-                <div className="hero-content ">
+            <div className="hero ">
+                <div className="mt-28 mb-8">
                     <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-lime-200 border-4 border-b-lime-700">
                         <h1 className="text-5xl font-bold mx-auto p-4 text-red-800">Login Here</h1>
 
@@ -127,17 +125,16 @@ const Login = () => {
                                                 show ? <FaEyeSlash /> : <FaRegEye />
                                             }
                                         </p>
-
                                     </span>
                                 </p>
                             </div>
                             <div className="form-control mt-6">
-                            <button className="btn btn-error text-white text-xl font-bold">
+                            <button className="btn btn-success text-white text-xl font-bold bg-green-700">
                                     Login <IoLogInOutline />
                                 </button>
                                 {
                                     googleUser ?
-                                        <button className="btn btn-black mt-3 rounded-full" onClick={googleOut}>Sign Out</button> :
+                                        <button className="btn btn-error mt-3 rounded-full bg-red-700 text-white text-lg" onClick={googleOut}>Sign Out</button> :
                                         <div className="mx-auto">
                                             <button onClick={handleSign} className="mx-auto mt-5 border-2 border-orange-700	rounded-full p-2 mr-4"> <FaGoogle className="text-orange-700"></FaGoogle></button>
                                             <button onClick={handleGithub} className="mx-auto mt-5 border-2 border-black rounded-full p-2 bg-orange-"> <FaGithub className="text-black"></FaGithub></button>
