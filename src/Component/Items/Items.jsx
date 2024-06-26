@@ -9,8 +9,7 @@ const Items = () => {
     const items = useLoaderData();
     const foodItems = Array.isArray(items) ? items : [];
     const [search, setSearch] = useState('');
-
-    const show = () => {
+    const show = () => { 
         setShowAll(!showAll);
         if (!showAll) {
             setDataLength(items.length);
@@ -28,12 +27,12 @@ const Items = () => {
     return (
         <div>
             <Helmet>
-            <title>Food Court | Items</title>
+                <title>Food Court | Items</title>
             </Helmet>
             <div className="grid ">
                 <div className="flex justify-center w-full mt-28 lg:mt-28 items-center">
                     <label className="font-semibold text-red-800 mr-4 text-xl">Search Food: </label>
-                    <input 
+                    <input
                         type="text"
                         placeholder="Search Your Favorite Food"
                         className="input input-bordered w-full max-w-xs"
@@ -43,18 +42,18 @@ const Items = () => {
                 </div>
 
                 <div className="grid">
-                <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-4 m-6 lg:m-12">
-                    {filterItems.length > 0 ? (
-                        filterItems.slice(0, dataLength).map((item) => (
-                            <Card key={item.id} item={item}></Card>
-                        ))
-                    ) : (
-                        <div className="text-center col-span-full text-red-600 font-semibold border-2">
-                            <p className="text-lg">Food is not available</p>
-                        </div>
-                    )}
+                    <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-4 m-6 lg:m-12">
+                        {filterItems.length > 0 ? (
+                            filterItems.slice(0, dataLength).map((item) => (
+                                <Card key={item.id} item={item}></Card>
+                            ))
+                        ) : (
+                            <div className="text-center col-span-full text-red-600 font-semibold" >
+                                <p className="text-lg">Food is not available</p>
+                            </div>
+                        )}
+                    </div>
                 </div>
-            </div>
             </div>
 
             <button className="btn btn-error mt-6 font-bold mx-auto justify-center card px-12 text-xl"
