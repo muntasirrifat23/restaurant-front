@@ -2,7 +2,7 @@ import { FaArrowRight } from "react-icons/fa";
 import "./Card.css";
 import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
-import { FaBangladeshiTakaSign } from "react-icons/fa6";
+import { FaBangladeshiTakaSign, FaCartShopping } from "react-icons/fa6";
 
 const Card = ({ item }) => {
     const { name, price, short_details, image, origin, id } = item;
@@ -24,6 +24,11 @@ const Card = ({ item }) => {
                         <button className="btn bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white font-bold">
                             <Link to={`/items/${id}`} className="flex gap-2 mx-2">
                             Details <FaArrowRight />
+                            </Link> 
+                        </button>
+                        <button className="btn btn-primary bg-red-800 text-white font-bold">
+                            <Link to='/cart' className="flex gap-2 mx-2">
+                            Add To Cart <FaCartShopping />
                             </Link> 
                         </button>
                     </div>

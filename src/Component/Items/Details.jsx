@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import { FaArrowLeft, FaRegStar, FaStar } from "react-icons/fa";
 import Rating from "react-rating";
 import { Link, useParams } from "react-router-dom";
@@ -36,6 +37,9 @@ const Details = () => {
     
     return (
         <div className="m-4 grid place-items-center gap-4">
+            <Helmet>
+                <title>Food Court | Details</title>
+            </Helmet>
         <div key={details.id} className="max-w-md w-full">
             <div className="card card-compact shadow-xl h-full border-4 border-b-lime-700 bg-lime-200">
                 <figure><img src={details.image} alt="Food" className="rounded-xl p-4 w-full" /></figure>

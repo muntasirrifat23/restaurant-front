@@ -16,8 +16,7 @@ import Details from './Component/Items/Details.jsx';
 import Items from './Component/Items/Items.jsx';
 import Cart from './Component/Cart/Cart.jsx';
 import Payment from './Component/Payment/Payment.jsx';
-import NotFound from './Pages/NotFound.jsx';
-
+import NotFound from './Header/NotFound.jsx';
 
 const router = createBrowserRouter([
   {

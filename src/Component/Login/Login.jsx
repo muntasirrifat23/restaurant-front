@@ -7,6 +7,7 @@ import { FaRegEye, FaEyeSlash } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Auth/AuthProvider";
 import { IoLogInOutline } from "react-icons/io5";
+import { Helmet } from "react-helmet";
 
 const Login = () => {
     const auth = getAuth(app);
@@ -19,7 +20,6 @@ const Login = () => {
 
     //Reset
     const [, setFormData] = useState({ email: '', password: '' });
-
     const navigate = useNavigate();
 
     //Log In
@@ -98,6 +98,9 @@ const Login = () => {
 
     return (
         <div>
+            <Helmet>
+            <title>Food Court | Login</title>
+            </Helmet>
             <div className="hero">
                 <div className="hero-content ">
                     <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-lime-200 border-4 border-b-lime-700">

@@ -23,7 +23,7 @@ const Chef = () => {
                     </p>
                 </div>
 
-                <div className="grid lg:grid-cols-4 gap-6">
+                <div className="grid lg:grid-cols-4 gap-6 ">
                     {
                         ourChef.map(chef => <div key={chef.id} className="card card-compact w-92 shadow-xl mx-auto rounded-xl lg:h-96">
                             <div className="place-items-center mt-2 bg-blue-300 rounded-xl h-full flex flex-col">
