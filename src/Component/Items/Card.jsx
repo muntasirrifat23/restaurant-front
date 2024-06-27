@@ -3,47 +3,61 @@ import "./Card.css";
 import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
 import { FaBangladeshiTakaSign, FaCartShopping } from "react-icons/fa6";
-// import Rating from "react-rating";
+import { useContext } from "react";
+import { AuthContext } from "../Auth/AuthProvider";
+import Swal from "sweetalert2";
+import axios from "axios";
 
 const Card = ({ item }) => {
-    const { name, price, short_details, image, origin, id } = item;
-    // const {name, price, short_details,long_details, rating,origin,image} =item;
+    const { name, price, short_details, image, origin, id, } = item;
+    const {user} = useContext(AuthContext);
+
+    const handleCart = (item) => {
+        if(user && user.email){
+            const cartData ={
+                menuId : id,
+                email: user.email,
+                name, image, price, origin
+            }
+            axios.post('http://localhost:5000/cart', cartData)
+            .then(res=>{
+                console.log(res.data); 
+                if(res.data.insertedId){
+                Swal.fire("Food Added To The Cart");
+                }
+            })
+        }
+    }
+
     return (
         <div>
             <div className="card card-compact shadow-xl  bg-lime-200 border-4 border-b-lime-700">
-                <figure><img src={image} alt="Food" className="rounded-xl p-4 card-image"/></figure>
+                <figure><img src={image} alt="Food" className="rounded-xl p-4 cImage" /></figure>
                 <div className="card-body ">
                     <h2 className="card-title  mx-auto text-2xl ">{name}</h2>
                     <p className="font-bold">{short_details}</p>
                     <div className="flex mt-2 font-semibold">
-                    <p className="flex items-center text-center">Price:
-                    <FaBangladeshiTakaSign></FaBangladeshiTakaSign> {price} 
-                    </p> 
+                        <p className="flex items-center text-center">Price:
+                            <FaBangladeshiTakaSign></FaBangladeshiTakaSign> {price}
+                        </p>
                         <p>Origin: {origin}</p>
-                        {/* <p className="flex">Rating 
-                            <p className="text-red-600 ml-1">
-                            <Rating
-                                        initialRating={rating}
-                                        emptySymbol={<FaRegStar />}
-                                        placeholderSymbol={<FaRegStar />}
-                                        fullSymbol={<FaStar />}
-                                        readonly
-                                    />
-                            </p>
-                                   
-                                </p> */}
                     </div>
+
+                    {/* Details */}
                     <div className="card-actions justify-center">
                         <button className="btn bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white font-bold">
                             <Link to={`/items/${id}`} className="flex gap-2 mx-2">
-                            Details <FaArrowRight />
-                            </Link> 
+                                Details <FaArrowRight />
+                            </Link>
                         </button>
-                        <button className="btn btn-primary bg-red-800 text-white font-bold">
-                            <Link to='/cart' className="flex gap-2 mx-2">
-                            Add To Cart <FaCartShopping />
-                            </Link> 
-                        </button>
+                        {/* Cart */}
+                        <Link to='/cart' className="flex gap-2 mx-2">
+                            <button onClick={() => handleCart(item)}
+                                className="btn btn-primary bg-red-800 text-white font-bold">
+                                Add To Cart <FaCartShopping />
+                            </button>
+                        </Link>
+
                     </div>
                 </div>
             </div>

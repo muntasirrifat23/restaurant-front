@@ -14,21 +14,31 @@ const Header = () => {
     }
     // useEffect(()=>{
     //     if(user){
-    //         alert("Thank You For Login");
+    //         Swal.fire({
+    //             position: "center",
+    //             icon: "success",
+    //             title: "Login Successfully",
+    //             showConfirmButton: false,
+    //             timer: 3000
+    //           });
     //     }
     // },[user])
 
     const NavLink = <p className="font-bold lg:flex text-xl lg:underline">
         <li><Link to='/'>Home</Link> </li>
         <li><Link to='/items'>Items</Link> </li>
+        <li className="flex">
+                        <Link to='/cart'>
+                        Cart
+                    <div className="badge no-underline">0</div>
+                    </Link>
+                    </li>
         {
             user &&
             <>
-                    <li><Link to='/cart'>Cart</Link> </li>
-
+           <li><Link to='/payment'>Payment</Link> </li>
             </>
         }
-        <li><Link to='/payment'>Payment</Link> </li>
         <li><Link to='/login'>Login</Link></li>
         <li><Link to='/register'>Registration</Link></li>
     </p>
