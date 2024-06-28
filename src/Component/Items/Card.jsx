@@ -17,7 +17,7 @@ const Card = ({ item }) => {
             const cartData ={
                 menuId : id,
                 email: user.email,
-                name, image, price, origin
+                name, image, price, origin, item
             }
             axios.post('http://localhost:5000/cart', cartData)
             .then(res=>{

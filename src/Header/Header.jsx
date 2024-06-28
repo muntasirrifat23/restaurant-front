@@ -24,13 +24,13 @@ const Header = () => {
     //     }
     // },[user])
 
-    const NavLink = <p className="font-bold lg:flex text-xl lg:underline">
+    const NavLink = <p className="font-bold lg:flex text-xl">
         <li><Link to='/'>Home</Link> </li>
         <li><Link to='/items'>Items</Link> </li>
         <li className="flex">
                         <Link to='/cart'>
                         Cart
-                    <div className="badge no-underline">0</div>
+                    <div className="badge">0</div>
                     </Link>
                     </li>
         {
