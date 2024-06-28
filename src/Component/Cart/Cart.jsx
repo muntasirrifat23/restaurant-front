@@ -1,17 +1,24 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { FaBangladeshiTakaSign } from "react-icons/fa6";
+import { AuthContext } from "../Auth/AuthProvider";
 
 const Cart = () => {
   const [showCart, setShowCart] = useState([]);
+  const {user} = useContext(AuthContext);
+
   useEffect(() => {
-    fetch("http://localhost:5000/cart")
+    if(user && user.email){
+      fetch(`http://localhost:5000/cart?email=${user.email}`)
       .then((res) => res.json())
       .then((data) => {
         setShowCart(data);
-        console.log(data);
+        // console.log(data);
       });
-  }, []);
+    }
+  }, [user]);
+   
+
   return (
     <div>
       <Helmet>
