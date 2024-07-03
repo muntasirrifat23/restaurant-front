@@ -1,0 +1,29 @@
+
+  
+  .btnCart {
+    background-color: #4CAF50;
+    border: none; 
+    color: white; 
+    padding: 4px 8px;
+    font-size: 16px;
+    margin: 5px;
+  }
+
+.cartIcon{
+    color: white;
+    background-color: rgb(209, 29, 29);
+    font-size: larger;
+}
+.cartIcon:hover{
+    color:  rgb(209, 29, 29);
+    background-color: white;
+    font-size: larger;
+}
+
+.total{
+    font-size: larger;
+    margin-top: 10px;
+    font-weight: bold;
+}
+  
+  

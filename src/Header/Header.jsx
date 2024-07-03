@@ -12,30 +12,13 @@ const Header = () => {
             .then()
             .catch()
     }
-    // useEffect(()=>{
-    //     if(user){
-    //         Swal.fire({
-    //             position: "center",
-    //             icon: "success",
-    //             title: "Login Successfully",
-    //             showConfirmButton: false,
-    //             timer: 3000
-    //           });
-    //     }
-    // },[user])
 
     const NavLink = <p className="font-bold lg:flex text-xl">
         <li><Link to='/'>Home</Link> </li>
         <li><Link to='/items'>Items</Link> </li>
-        <li className="flex">
-                        <Link to='/cart'>
-                        Cart
-                    <div className="badge">0</div>
-                    </Link>
-                    </li>
+        <li><Link to='/cart'>Cart</Link></li>
         {
-            user &&
-            <>
+            user && <>
            <li><Link to='/payment'>Payment</Link> </li>
             </>
         }
@@ -51,7 +34,6 @@ const Header = () => {
                 </Marquee>
             </div>
             <div className="navbar bg-lime-200 ">
-            {/* <div className="navbar bg-lime-200 fixed z-10 lg:bg-opacity-30 max-w-screen-xl mx-auto lg:text-white"> */}
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

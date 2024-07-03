@@ -12,11 +12,11 @@ import Login from './Component/Login/Login.jsx';
 import Register from './Component/Register/Register.jsx';
 import AuthProvider from './Component/Auth/AuthProvider.jsx';
 import Details from './Component/Items/Details.jsx';
-// import PrivateRoute from './Component/PrivateRoute/PrivateRoute.jsx';
 import Items from './Component/Items/Items.jsx';
 import Cart from './Component/Cart/Cart.jsx';
 import Payment from './Component/Payment/Payment.jsx';
 import NotFound from './Header/NotFound.jsx';
+import PrivateRoute from './Component/PrivateRoute/PrivateRoute.jsx';
 
 const router = createBrowserRouter([
   {
@@ -32,7 +32,6 @@ const router = createBrowserRouter([
         path: '/items/:id',
         element: <Details></Details>,
         loader: ({ params }) => fetch(`http://localhost:5000/item/${params.id}`),
-         //   // element:<PrivateRoute> <Details></Details> </PrivateRoute> //notDone
       },      
       {
         path:'/items',
@@ -41,7 +40,7 @@ const router = createBrowserRouter([
       },
       {
         path:'/cart',
-        element:<Cart></Cart>
+        element:<PrivateRoute><Cart></Cart></PrivateRoute> 
       },
       {
         path:'/payment',
