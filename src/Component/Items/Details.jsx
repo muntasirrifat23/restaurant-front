@@ -34,49 +34,47 @@ const Details = () => {
         <title>Food Court | Details</title>
       </Helmet>
       <div className="hero">
-      <div key={details.id} className="w-full mt-28">
-        <div className=" shadow-xl h-full border-4 border-b-lime-700 bg-lime-200">
-          <div className="flex">
-            <div className="w-1/2">
-              <img src={details.image} className="rounded-xl lg:h-full" />
-            </div>
-
-            <div className="w-1/2 p-4">
-              <h2 className="card-title text-red-700 mx-auto text-3xl">
-                {details.name}
-              </h2>
-              <p className="font-bold text-xl">{details.short_details}</p>
-              <p>{details.long_details}</p>
-              <div className="flex mt-2 text-red-700 font-semibold text-center gap-5">
-                <p>Price: {details.price}$</p>
-                <p>Origin: {details.origin}</p>
-                <p>
-                  Rating:
-                  <Rating
-                    initialRating={details.rating}
-                    emptySymbol={<FaRegStar />}
-                    placeholderSymbol={<FaRegStar />}
-                    fullSymbol={<FaStar />}
-                    readonly
-                  />
-                </p>
+        <div key={details.id} className="w-full mt-28">
+          <div className=" shadow-xl h-full border-4 border-b-lime-700 bg-lime-200">
+            <div className="flex">
+              <div className="w-1/2">
+                <img src={details.image} className="rounded-xl lg:h-full" />
               </div>
 
-              <div className="card-actions justify-center mt-4">
-                <button className="btn bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white font-bold w-full">
+              <div className="w-1/2 p-4">
+                <h2 className="card-title text-red-700 mx-auto text-3xl">
+                  {details.name}
+                </h2>
+                <p className="font-bold text-xl">{details.short_details}</p>
+                <p>{details.long_details}</p>
+                <div className="flex mt-2 text-red-700 font-semibold text-center gap-5">
+                  <p>Price: {details.price}$</p>
+                  <p>Origin: {details.origin}</p>
+                  <p>
+                    Rating:
+                    <Rating
+                      initialRating={details.rating}
+                      emptySymbol={<FaRegStar />}
+                      placeholderSymbol={<FaRegStar />}
+                      fullSymbol={<FaStar />}
+                      readonly
+                    />
+                  </p>
+                </div>
+
+                <div className="card-actions justify-center mt-4">
                   <Link to="/items" className="flex gap-4 text-xl items-center">
-                    {" "}
-                    <FaArrowLeft />
-                    Back
+                    <button className="btn bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white font-bold w-full">
+                      <FaArrowLeft />
+                      Back
+                    </button>
                   </Link>
-                </button>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      </div>
-     
     </div>
   );
 };

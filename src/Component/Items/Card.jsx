@@ -17,7 +17,7 @@ const Card = ({ item }) => {
             const cartData ={
                 menuId : id,
                 email: user.email,
-                name, image, price, origin, item
+                name, image, price, origin
             }
             axios.post('http://localhost:5000/cart', cartData)
             .then(res=>{
@@ -45,15 +45,16 @@ const Card = ({ item }) => {
 
                     {/* Details */}
                     <div className="card-actions justify-center">
+                    <Link to={`/items/${id}`} className="flex gap-2 mx-2">
                         <button className="btn bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white font-bold">
-                            <Link to={`/items/${id}`} className="flex gap-2 mx-2">
                                 Details <FaArrowRight />
-                            </Link>
                         </button>
+                        </Link>
+
                         {/* Cart */}
-                        <Link to='/cart' className="flex gap-2 mx-2">
+                        <Link to='/cart' className="gap-2 mx-2">
                             <button onClick={() => handleCart(item)}
-                                className="btn btn-primary bg-red-800 text-white font-bold">
+                                className="btn addBtn bg-green-800   btn-primary text-white font-bold border-0">
                                 Add To Cart <FaCartShopping />
                             </button>
                         </Link>
