@@ -46,6 +46,7 @@ const Card = ({ item }) => {
         image,
         price,
         rating,
+        item
       };
 
       axios

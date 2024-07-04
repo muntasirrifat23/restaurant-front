@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 const HomeOrder = () => {
   return (
     <div>
-      <div
+      {/* <div
         className="hero min-h-screen"
         style={{
           backgroundImage: "url('')",
@@ -22,7 +22,7 @@ const HomeOrder = () => {
             </Link>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

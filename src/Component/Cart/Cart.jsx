@@ -83,15 +83,16 @@ const Cart = () => {
         <title>Food Court | Cart</title>
       </Helmet>
 
-      <div className="hero">
-        <div className="overflow-x-auto mt-32 mb-12 lg:max-w-5xl w-full">
+      <div className="hero ">
+        <div className="overflow-x-auto mt-32 mb-12 lg:max-w-5xl w-full ">
           <table className="table">
-            <thead className="bg-red-700 text-white text-lg">
+            <thead className="bg-red-700 text-white lg:text-lg">
               <tr className="text-center">
                 <th>Food Image</th>
                 <th>Food Name</th>
                 <th>Food Price</th>
-                <th className="sm:text-sm">Add/Reduce</th>
+                <th>Quantity</th>
+                <th>Total Price</th>
                 <th>Action</th>
               </tr>
             </thead>
@@ -106,22 +107,33 @@ const Cart = () => {
                       </div>
                     </div>
                   </td>
-                  <td>
-                    <div className="font-semibold text-lg">{item.name}</div>
+
+                  <td className="font-semibold lg:text-lg">
+                    {item.name}
                   </td>
-                  <td className="flex justify-center items-center gap-1 mt-5 font-semibold text-lg">
+
+                  <td className="flex justify-center items-center gap-1 mt-5 font-semibold text-lg ">
                     {item.price}
                     <FaBangladeshiTakaSign />
                   </td>
-                  <td className="btnCartx justify-center items-center">
-                    <button className="btnCart" onClick={() => handleIncrement(item._id)}> +
+
+                  <td>
+                    <div className="flex justify-center items-center">
+                    <button className="btnCart" onClick={() => handleIncrement(item._id)}> + 
                     </button>
-                    <span className="btnCart">{item.amount}</span>
+                    <span className="btnQuantity">{item.amount}</span>
                     <button className="btnCart" onClick={() => handleDecrement(item._id)}> -
                     </button>
+                    </div>
                   </td>
+
+                  <td className="flex justify-center items-center gap-1 mt-5 font-semibold text-lg">
+                  {item.amount * item.price}
+                  <FaBangladeshiTakaSign />
+                  </td>
+
                   <td>
-                    <button onClick={() => handleDelete(item._id)} className="btn btn-error btn-md cartIcon">  <FaTrashCan />
+                    <button onClick={() => handleDelete(item._id)} className="btn btn-error btn-md delIcon">  <FaTrashCan />
                     </button>
                   </td>
                 </tr>
@@ -129,15 +141,17 @@ const Cart = () => {
             ))}
           </table>
 
-          <div className="flex justify-center items-center gap-1 mt-5 font-semibold text-lg total">
+
+          <div className="flex justify-center items-center gap-1 mt-5 font-semibold text-xl total p-4 text-white">
             <span>Total Price of your food BDT : {price}</span>
             <FaBangladeshiTakaSign />
           </div>
+
           <Link to={"/payment"}>
             <button  className="payCart bg-green-700 text-white p-2 rounded-lg mx-auto text-center block mt-5 px-20 text-l">
               Payment 
             </button>
-          </Link>
+          </Link>          
         </div>
       </div>
     </div>
