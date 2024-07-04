@@ -1,52 +1,52 @@
 [
     {
         "id": 1,
-        "name": "John Doe",
+        "name": "Mohammad Rahman",
         "review": "Amazing food and great atmosphere. Highly recommend the truffle pasta."
     },
     {
         "id": 2,
-        "name": "Jane Smith",
+        "name": "Fatima Begum",
         "review": "Fresh sushi with a wide variety of rolls. Service was prompt and friendly."
     },
     {
         "id": 3,
-        "name": "Alice Johnson",
+        "name": "Abdul Haque",
         "review": "Delicious homemade pasta and generous portions. The carbonara was a standout."
     },
     {
         "id": 4,
-        "name": "Bob Brown",
+        "name": "Ayesha Khan",
         "review": "Juicy burgers with creative toppings. The sweet potato fries were excellent."
     },
     {
         "id": 5,
-        "name": "Charlie Davis",
+        "name": "Nazrul Islam",
         "review": "Authentic tacos with a variety of fillings. The carnitas were especially tasty."
     },
     {
         "id": 6,
-        "name": "Diana Evans",
+        "name": "Taslima Akhtar",
         "review": "Perfectly crispy crust and fresh toppings. The margherita pizza was a hit."
     },
     {
         "id": 7,
-        "name": "Frank Green",
+        "name": "Shafiqul Alam",
         "review": "Tender steaks cooked to perfection. The ribeye was melt-in-your-mouth good."
     },
     {
         "id": 8,
-        "name": "Grace Hall",
+        "name": "Farhana Ahmed",
         "review": "Creative and flavorful vegan dishes. The tofu stir-fry was outstanding."
     },
     {
         "id": 9,
-        "name": "Henry Clark",
+        "name": "Jamal Uddin",
         "review": "Fresh and tasty seafood. The lobster roll was packed with flavor."
     },
     {
         "id": 10,
-        "name": "Ivy Lopez",
+        "name": "Rima Chowdhury",
         "review": "Decadent desserts and great coffee. The chocolate lava cake is a must-try."
     }
 ]

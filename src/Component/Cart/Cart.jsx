@@ -61,12 +61,11 @@ const Cart = () => {
   const handleDelete = (id) => {
     Swal.fire({
       title: "Are you sure?",
-      text: "You won't be able to revert this!",
-      icon: "warning",
+      text: "This food delete from cart",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
+      confirmButtonText: "Yes",
     }).then((result) => {
       if (result.isConfirmed) {
         axios.delete(`http://localhost:5000/cart/${id}`).then((res) => {
@@ -85,14 +84,14 @@ const Cart = () => {
       </Helmet>
 
       <div className="hero">
-        <div className="overflow-x-auto mt-32 mb-12 lg:max-w-5xl w-full max-w-xl">
+        <div className="overflow-x-auto mt-32 mb-12 lg:max-w-5xl w-full">
           <table className="table">
             <thead className="bg-red-700 text-white text-lg">
               <tr className="text-center">
                 <th>Food Image</th>
                 <th>Food Name</th>
                 <th>Food Price</th>
-                <th>+/-</th>
+                <th className="sm:text-sm">Add/Reduce</th>
                 <th>Action</th>
               </tr>
             </thead>
@@ -103,11 +102,7 @@ const Cart = () => {
                   <td>
                     <div className="avatar">
                       <div className="h-16 w-16">
-                        <img
-                          src={item.image}
-                          className="rounded-xl"
-                          alt={item.name}
-                        />
+                        <img src={item.image} className="rounded-xl" alt={item.name}/>
                       </div>
                     </div>
                   </td>
@@ -119,28 +114,14 @@ const Cart = () => {
                     <FaBangladeshiTakaSign />
                   </td>
                   <td className="btnCartx justify-center items-center">
-                    <button
-                      className="btnCart"
-                      onClick={() => handleIncrement(item._id)}
-                    >
-                      {" "}
-                      +
+                    <button className="btnCart" onClick={() => handleIncrement(item._id)}> +
                     </button>
                     <span className="btnCart">{item.amount}</span>
-                    <button
-                      className="btnCart"
-                      onClick={() => handleDecrement(item._id)}
-                    >
-                      {" "}
-                      -{" "}
+                    <button className="btnCart" onClick={() => handleDecrement(item._id)}> -
                     </button>
                   </td>
                   <td>
-                    <button
-                      onClick={() => handleDelete(item._id)}
-                      className="btn btn-error btn-md cartIcon"
-                    >
-                      <FaTrashCan />
+                    <button onClick={() => handleDelete(item._id)} className="btn btn-error btn-md cartIcon">  <FaTrashCan />
                     </button>
                   </td>
                 </tr>
@@ -153,8 +134,8 @@ const Cart = () => {
             <FaBangladeshiTakaSign />
           </div>
           <Link to={"/payment"}>
-            <button className="payCart bg-green-700 text-white p-2 rounded-lg mx-auto text-center block mt-5 px-20 text-l">
-              Payment
+            <button  className="payCart bg-green-700 text-white p-2 rounded-lg mx-auto text-center block mt-5 px-20 text-l">
+              Payment 
             </button>
           </Link>
         </div>
