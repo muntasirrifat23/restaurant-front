@@ -5,12 +5,13 @@ import { AuthContext } from "../Auth/AuthProvider";
 import "./Cart.css";
 import Swal from "sweetalert2";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
   const [showCart, setShowCart] = useState([]);
   const { user } = useContext(AuthContext);
   const [price, setPrice] = useState(0);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (user && user.email) {
@@ -77,6 +78,10 @@ const Cart = () => {
     });
   };
 
+  const handlePayCart = () => {
+    navigate("/payment", { state: { totalPrice: price, cartItems: showCart } });
+  };
+
   return (
     <div>
       <Helmet>
@@ -141,17 +146,14 @@ const Cart = () => {
             ))}
           </table>
 
-
           <div className="flex justify-center items-center gap-1 mt-5 font-semibold text-xl total p-4 text-white">
             <span>Total Price of your food BDT : {price}</span>
             <FaBangladeshiTakaSign />
           </div>
 
-          <Link to={"/payment"}>
-            <button  className="payCart bg-green-700 text-white p-2 rounded-lg mx-auto text-center block mt-5 px-20 text-l">
-              Payment 
-            </button>
-          </Link>          
+          <button onClick={handlePayCart} className="payCart bg-green-700 text-white p-2 rounded-lg mx-auto text-center block mt-5 px-20 text-l">
+            Payment 
+          </button>          
         </div>
       </div>
     </div>
