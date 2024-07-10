@@ -3,4 +3,21 @@
     width: 300px;
     border-radius: 20px;
 }
-
+.notText{
+    text-align: center;
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    background-color: black;
+    opacity: 0.5;
+    font-size: 2.5rem;
+    font-weight: bold;
+    padding: 10px;
+    width: 100%;
+}
+.notIn:hover .notText {
+    display: block;
+  }

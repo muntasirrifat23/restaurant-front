@@ -4,7 +4,6 @@ import { useLocation } from "react-router-dom";
 
 const Payment = () => {
   const location = useLocation();
-  // const navigate = useNavigate();
   const { totalPrice, cartItems } = location.state || {};
 
   const handlePayment = () => {
@@ -21,7 +20,7 @@ const Payment = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.status === "SUCCESS") {
-          window.open(data.redirectURL, '_blank');
+          window.open(data.redirectURL, "_blank");
         } else {
           Swal.fire("Payment Failed", data.message, "error");
         }
@@ -33,16 +32,25 @@ const Payment = () => {
   };
 
   return (
-    <div>
+    <div className="hero-content mx-auto">
       <Helmet>
         <title>Food Court | Payment</title>
       </Helmet>
-      <div className="hero">
-        <div className="mt-28">
-          <button onClick={handlePayment} className="bg-green-700 text-white p-2 rounded-lg mx-auto text-center block mt-5 px-20 text-l">
-            SSLCommerz Payment
-          </button>
+      <div className="mt-24">
+        <hr className="border-red-800 mx-auto" style={{ width: "100%" }} />
+        <div className="w-50 text-center justify-center">
+          <p className="text-center font-bold lg:text-5xl text-3xl italic text-red-800 mb-4">
+            <p>Confirm Your Payment</p>
+            <hr className="border-red-800 mx-auto" style={{ width: "100%" }} />
+          </p>
         </div>
+
+        <button onClick={handlePayment} className="bg-green-700 text-white p-2 rounded-lg mx-auto text-center block px-20 text-xl w-full">
+          Online Payment Method
+        </button>
+
+        <button className="text-green-700 border-green-700 border mt-5 bg-white p-2 rounded-lg mx-auto text-center block px-20 text-xl w-full font-bold">
+        Cash On Delivery</button>
       </div>
     </div>
   );

@@ -17,6 +17,7 @@ import Cart from './Component/Cart/Cart.jsx';
 import Payment from './Component/Payment/Payment.jsx';
 import NotFound from './Header/NotFound.jsx';
 import PrivateRoute from './Component/PrivateRoute/PrivateRoute.jsx';
+import Reserve from './Component/Reserve/Reserve.jsx';
 
 const router = createBrowserRouter([
   {
@@ -53,6 +54,10 @@ const router = createBrowserRouter([
       {
         path:'/register',
         element:<Register></Register>
+      },
+      {
+        path:'/reserve',
+        element: <Reserve></Reserve>
       },
       {
         path:'*',

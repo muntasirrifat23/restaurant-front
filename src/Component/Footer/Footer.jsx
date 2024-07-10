@@ -6,7 +6,7 @@ const Footer = () => {
             <footer className="footer footer-center p-10 bg-base-200 text-base-content rounded">
                 <div className="text-2xl text-blue-800 font-bold italic">
                     <p className="text-3xl">Authentic Best Foods in The Town</p>
-                    <p className="text-red-600 flex gap-3"> It's Yammy <IoFastFoodOutline />
+                    <p className="text-red-600 flex gap-3"> Yummy Food<IoFastFoodOutline />
                     </p>
                 </div>
                 <div className="font-semibold">

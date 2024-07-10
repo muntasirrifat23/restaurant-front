@@ -79,17 +79,26 @@ const Cart = () => {
   };
 
   const handlePayCart = () => {
-    navigate("/payment", { state: { totalPrice: price, cartItems: showCart } });
+    if (price <= 0) {
+      Swal.fire("Please Add Food");
+    } else {
+      navigate("/payment", { state: { totalPrice: price, cartItems: showCart } });
+    }
   };
 
   return (
-    <div>
+    <div className="text-white cartImg">
       <Helmet>
         <title>Food Court | Cart</title>
       </Helmet>
-
-      <div className="hero ">
-        <div className="overflow-x-auto mt-32 mb-12 lg:max-w-5xl w-full ">
+      <div className="">
+        <div className="w-50 text-center justify-center mt-28">
+          <p className="text-center font-bold lg:text-4xl text-3xl italic text-white mb-4">
+            <p>Cart of My Food</p>
+            <hr className="text-white mx-auto" style={{ width: "50%" }} />
+          </p>
+        </div>
+        <div className="mb-12 lg:max-w-5xl w-full ">
           <table className="table">
             <thead className="bg-red-700 text-white lg:text-lg">
               <tr className="text-center">
@@ -104,18 +113,20 @@ const Cart = () => {
 
             {showCart.map((item) => (
               <tbody key={item._id} className="text-center">
-                <tr className="border-1 border-red-800">
+                <tr className="border-1 border-white">
                   <td>
                     <div className="avatar">
                       <div className="h-16 w-16">
-                        <img src={item.image} className="rounded-xl" alt={item.name}/>
+                        <img
+                          src={item.image}
+                          className="rounded-xl"
+                          alt={item.name}
+                        />
                       </div>
                     </div>
                   </td>
 
-                  <td className="font-semibold lg:text-lg">
-                    {item.name}
-                  </td>
+                  <td className="font-semibold lg:text-lg">{item.name}</td>
 
                   <td className="flex justify-center items-center gap-1 mt-5 font-semibold text-lg ">
                     {item.price}
@@ -124,21 +135,25 @@ const Cart = () => {
 
                   <td>
                     <div className="flex justify-center items-center">
-                    <button className="btnCart" onClick={() => handleIncrement(item._id)}> + 
-                    </button>
-                    <span className="btnQuantity">{item.amount}</span>
-                    <button className="btnCart" onClick={() => handleDecrement(item._id)}> -
-                    </button>
+                    <button className="btnCart" onClick={() => handleDecrement(item._id)}>
+                        -
+                      </button> 
+                      <span className="btnQuantity">{item.amount}</span>
+                      <button className="btnCart" onClick={() => handleIncrement(item._id)}>
+                        +
+                      </button>
                     </div>
                   </td>
 
                   <td className="flex justify-center items-center gap-1 mt-5 font-semibold text-lg">
-                  {item.amount * item.price}
-                  <FaBangladeshiTakaSign />
+                    {item.amount * item.price}
+                    <FaBangladeshiTakaSign />
                   </td>
 
                   <td>
-                    <button onClick={() => handleDelete(item._id)} className="btn btn-error btn-md delIcon">  <FaTrashCan />
+                    <button onClick={() => handleDelete(item._id)} className="btn btn-error btn-md delIcon"
+                    >
+                      <FaTrashCan />
                     </button>
                   </td>
                 </tr>
@@ -147,13 +162,14 @@ const Cart = () => {
           </table>
 
           <div className="flex justify-center items-center gap-1 mt-5 font-semibold text-xl total p-4 text-white">
-            <span>Total Price of your food BDT : {price}</span>
-            <FaBangladeshiTakaSign />
+            Total Price of Your Food BDT : <FaBangladeshiTakaSign /> {price}
+            
           </div>
 
-          <button onClick={handlePayCart} className="payCart bg-green-700 text-white p-2 rounded-lg mx-auto text-center block mt-5 px-20 text-l">
-            Payment 
-          </button>          
+          <button onClick={handlePayCart} className="payCart bg-green-700 text-white p-2 rounded-lg mx-auto text-center block mt-5 px-20 text-l"
+          >
+            Payment
+          </button>
         </div>
       </div>
     </div>

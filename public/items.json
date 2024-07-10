@@ -81,6 +81,17 @@
     },
     {
         "id": 9,
+        "name": "Spaghetti Carbonara",
+        "price": 290,
+        "short_details": "Pasta with a creamy sauce made from eggs, cheese, pancetta, and pepper.",
+        "long_details": "Spaghetti Carbonara is a classic Italian pasta dish made with spaghetti tossed in a creamy sauce made from eggs, Pecorino Romano cheese, pancetta, and black pepper. The heat from the pasta cooks the eggs to create a rich and velvety sauce that coats the noodles. With its simple yet indulgent flavors, Spaghetti Carbonara is a beloved comfort food.",
+        "rating": 4.7,
+        "origin": "Italy",
+        "image": "../public/Food/not1.jpg",
+        "not": true
+    },
+    {
+        "id": 10,
         "name": "Butter Chicken",
         "price": 520,
         "short_details": "A creamy and mildly spiced Indian chicken dish cooked with butter and tomato sauce.",
@@ -90,7 +101,7 @@
         "image": "../public/Food/image9.jpeg"
     },
     {
-        "id": 10,
+        "id": 11,
         "name": "Fish and Chips",
         "price": 190,
         "short_details": "Deep-fried fish fillets served with crispy potato chips.",
@@ -100,7 +111,7 @@
         "image": "../public/Food/image10.jpeg"
     },
     {
-        "id": 11,
+        "id": 12,
         "name": "French Fry",
         "price": 90,
         "short_details": "Crispy fried potato sticks seasoned with salt.",
@@ -110,7 +121,7 @@
         "image": "../public/Food/image11.jpeg"
     },
     {
-        "id": 12,
+        "id": 13,
         "name": "Falafel Wrap",
         "price": 130,
         "short_details": "A Middle Eastern wrap filled with falafel balls, lettuce, tomato, and tahini sauce.",
@@ -120,7 +131,18 @@
         "image": "../public/Food/image12.jpeg"
     },
     {
-        "id": 13,
+        "id": 14,
+        "name": "Tom Yum Soup",
+        "price": 300,
+        "short_details": "Spicy and sour Thai soup with shrimp, mushrooms, and herbs.",
+        "long_details": "Tom Yum Soup is a hot and sour Thai soup that is both spicy and refreshing. It is made with shrimp, mushrooms, lemongrass, kaffir lime leaves, galangal, and Thai chilies. The broth is flavored with fish sauce, lime juice, and a hint of sugar, creating a balance of flavors. Tom Yum Soup is a popular appetizer or main dish in Thai cuisine.",
+        "rating": 4.7,
+        "origin": "Thailand",
+        "image": "../public/Food/not2.jpg",
+        "not": true
+    },
+    {
+        "id": 15,
         "name": "Lasagna",
         "price": 310,
         "short_details": "Layers of pasta sheets, meat sauce, and cheese baked to perfection.",
@@ -130,7 +152,7 @@
         "image": "../public/Food/image13.jpeg"
     },
     {
-        "id": 14,
+        "id": 16,
         "name": "Shrimp Scampi",
         "price": 410,
         "short_details": "Shrimp cooked in a garlic butter sauce served over pasta.",
@@ -140,7 +162,7 @@
         "image": "../public/Food/image14.jpeg"
     },
     {
-        "id": 15,
+        "id": 17,
         "name": "Beef Bulgogi",
         "price": 620,
         "short_details": "Korean grilled beef marinated in a sweet and savory sauce.",
@@ -150,7 +172,7 @@
         "image": "../public/Food/image15.jpeg"
     },
     {
-        "id": 16,
+        "id": 18,
         "name": "Chicken Parmesan",
         "price": 270,
         "short_details": "Breaded chicken breast topped with marinara sauce and melted cheese.",
@@ -160,7 +182,7 @@
         "image": "../public/Food/image16.jpeg"
     },
     {
-        "id": 17,
+        "id": 19,
         "name": "Veggie Stir-Fry",
         "price": 290,
         "short_details": "Assorted vegetables stir-fried in a flavorful sauce.",
@@ -170,7 +192,7 @@
         "image": "../public/Food/image17.jpeg"
     },
     {
-        "id": 18,
+        "id": 20,
         "name": "Eggs Benedict",
         "price": 120,
         "short_details": "Poached eggs served on English muffins with ham and hollandaise sauce.",
@@ -180,7 +202,7 @@
         "image": "../public/Food/image18.jpeg"
     },
     {
-        "id": 19,
+        "id": 21,
         "name": "Burrito Bowl",
         "price": 160,
         "short_details": "A Mexican-inspired bowl with rice, beans, meat, salsa, and toppings.",
@@ -190,7 +212,18 @@
         "image": "../public/Food/image19.jpeg"
     },
     {
-        "id": 20,
+        "id": 22,
+        "name": "Ramen",
+        "price": 350,
+        "short_details": "Japanese noodle soup with broth, noodles, meat, and various toppings.",
+        "long_details": "Ramen is a Japanese noodle soup consisting of a flavorful broth, wheat noodles, and various toppings such as sliced pork, soft-boiled eggs, seaweed, and green onions. The broth can be made from different bases, including soy sauce, miso, or tonkotsu (pork bone). Ramen is a popular comfort food in Japan and has gained widespread popularity around the world.",
+        "rating": 4.9,
+        "origin": "Japan",
+        "image": "../public/Food/not3.jpg",
+        "not": true
+    }, 
+    {
+        "id": 23,
         "name": "Chocolate Fondue",
         "price": 140,
         "short_details": "Melted chocolate served with fruits, marshmallows, and other dippables.",
@@ -200,7 +233,7 @@
         "image": "../public/Food/image20.jpeg"
     },
     {
-        "id": 21,
+        "id": 24,
         "name": "Mutton Biryani",
         "price": 330,
         "short_details": "A flavorful Indian rice dish cooked with marinated mutton and spices.",
@@ -210,7 +243,7 @@
         "image": "../public/Food/image21.jpeg"
     },
     {
-        "id": 22,
+        "id": 25,
         "name": "Lobster Bisque",
         "price": 520,
         "short_details": "A creamy soup made with lobster meat, cream, and other seasonings.",
@@ -220,7 +253,7 @@
         "image": "../public/Food/image22.jpeg"
     },
     {
-        "id": 23,
+        "id": 26,
         "name": "Beef Shawarma",
         "price": 220,
         "short_details": "Middle Eastern street food made with grilled marinated beef, wrapped in pita bread.",
@@ -230,7 +263,7 @@
         "image": "../public/Food/image23.jpeg"
     },
     {
-        "id": 24,
+        "id": 27,
         "name": "Beef Wellington",
         "price": 490,
         "short_details": "Tender beef fillet wrapped in puff pastry and baked to perfection.",
@@ -240,7 +273,7 @@
         "image": "../public/Food/image24.jpeg"
     },
     {
-        "id": 25,
+        "id": 28,
         "name": "Chicken Shawarma",
         "price": 180,
         "short_details": "Grilled marinated chicken served in a wrap or pita bread with tahini sauce.",
@@ -250,7 +283,7 @@
         "image": "../public/Food/image25.jpeg"
     },
     {
-        "id": 26,
+        "id": 29,
         "name": "Beef Tacos",
         "price": 260,
         "short_details": "Soft or crispy tortillas filled with seasoned beef, lettuce, cheese, and salsa.",
@@ -258,5 +291,16 @@
         "rating": 4.4,
         "origin": "Mexico",
         "image": "../public/Food/image26.jpeg"
+    },
+    {
+        "id": 36,
+        "name": "Baklava",
+        "price": 200,
+        "short_details": "Sweet Middle Eastern pastry made with layers of filo dough, nuts, and honey.",
+        "long_details": "Baklava is a sweet and rich pastry made with layers of filo dough, chopped nuts (such as walnuts or pistachios), and honey or syrup. The pastry is baked until golden and crispy, and then soaked in a sweet syrup, which infuses the layers with flavor. Baklava is a popular dessert in Middle Eastern and Mediterranean cuisines, known for its delightful combination of textures and tastes.",
+        "rating": 4.8,
+        "origin": "Middle East",
+        "image": "../public/Food/not4.jpg",
+        "not":true
     }
 ]

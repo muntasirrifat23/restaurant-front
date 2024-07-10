@@ -5,7 +5,7 @@ import { FaRegEye, FaEyeSlash } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Auth/AuthProvider";
 import { Helmet } from "react-helmet";
-
+import './Register.css'
 const Register = () => {
     const auth = getAuth(app);
     const [userError, setUserError] = useState('');
@@ -67,7 +67,7 @@ const Register = () => {
             <Helmet>
                 <title>Food Court | Registration</title>
             </Helmet>
-            <div className="hero-content mt-28 mb-8">
+            <div className="mt-16 mb-8 registerImg">
                 <div className="card shrink-0 w-full max-w-md shadow-2xl bg-blue-200">
                     <h1 className="text-5xl font-bold mx-auto p-4">Registration</h1>
                     <form onSubmit={handleRegister} className="card-body">
@@ -95,21 +95,21 @@ const Register = () => {
                                             show ? <FaEyeSlash /> : <FaRegEye />
                                         }
                                     </p>
-
                                 </span>
                             </p>
 
                         </div>
                         <div className="form-control mt-6">
-                            <button className="btn btn-success text-white font-bold">Register</button>
+                            <button className="btn btn-success text-white font-bold text-xl">Register</button>
                         </div>
                         <p className="text-red-600">
                             {
                                 userError && <> {userError}</>
                             }
                         </p>
-                        <p>Have An Account? Do<Link to='/login' className="ml-1  text-blue-700 font-semibold">Login</Link></p>
+                        <p className="text-center text-lg">Have An Account? Do<Link to='/login' className="ml-1  text-blue-700 font-semibold">Login</Link></p>
                     </form>
+                    
                 </div>
             </div>
         </div>

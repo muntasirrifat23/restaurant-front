@@ -17,7 +17,7 @@ const Details = () => {
 
   if (!details) {
     return (
-      <div className="hero">
+      <div className="hero-content">
         <div className="flex items-center justify-center mt-32">
           <div className="flex flex-col items-center ">
             <p className="text-center">Please wait, food details loading...</p>
@@ -33,8 +33,8 @@ const Details = () => {
       <Helmet>
         <title>Food Court | Details</title>
       </Helmet>
-      <div className="hero">
-        <div key={details.id} className="w-full mt-28">
+      <div>
+        <div key={details.id} className="w-full mt-24">
           <div className=" shadow-xl h-full border-4 border-b-lime-700 bg-lime-200">
             <div className="flex">
               <div className="w-1/2">

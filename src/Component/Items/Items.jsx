@@ -25,7 +25,7 @@ const Items = () => {
     );
 
     return (
-        <div>
+        <div className="bg-lime-100">
             <Helmet>
                 <title>Food Court | Items</title>
             </Helmet>

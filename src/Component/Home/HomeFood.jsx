@@ -15,7 +15,7 @@ const HomeFood = () => {
         <div className='lg:m-12 m-4'>
                 <hr className='border-red-800 mx-auto' style={{ width: '40%' }} />
                 <small className="text-center text-red-800"><p>
-                Cooking is an art but taste is the artist.
+                Cooking Is An Art But Taste Ts The Artist
                 </p>
                 </small>
                 <div className='w-50 text-center justify-center'>

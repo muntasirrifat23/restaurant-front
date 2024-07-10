@@ -3,7 +3,7 @@ import Chef from "./Chef";
 import HomeFood from "./HomeFood";
 import { Helmet } from "react-helmet";
 import Review from "./Review";
-import HomeOrder from "./HomeOrder";
+// import HomeOrder from "./HomeOrder";
 
 const Home = () => {
     return (
@@ -13,7 +13,7 @@ const Home = () => {
             </Helmet>
             <Banner></Banner>
             <HomeFood></HomeFood>
-            <HomeOrder></HomeOrder>
+            {/* <HomeOrder></HomeOrder> */}
             <Chef></Chef>
             <Review></Review>
         </div>

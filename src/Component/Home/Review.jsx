@@ -49,7 +49,7 @@ const Review = () => {
                     {ourReview.map((review) => (
                         <SwiperSlide
                             key={review.id}
-                            className="text-center review-slide bg-blue-500 text-white p-2"
+                            className="text-center review-slide bg-lime-300 text-black p-2"
                             style={{
                                 display: 'flex',
                                 alignItems: 'center',

@@ -1,0 +1,11 @@
+.payImg{
+    background-image: url('../../../public/OthersPic/main-home-slide1.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 100hv;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* TODO */

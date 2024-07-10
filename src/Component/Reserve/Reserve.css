@@ -1,0 +1,36 @@
+.reserveImg{
+    background-image: url('../../../public/OthersPic/main-home-slide1.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.reserveText{
+    position: absolute;
+    color: white;
+    font-size: 2rem;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.hero{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.reserveBtn{
+    background-color: black;
+    color: aliceblue;  
+}
+.reserveBtn:hover{
+    background-color: aliceblue;
+    color: black;  
+}
