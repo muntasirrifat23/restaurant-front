@@ -12,18 +12,35 @@ const Header = () => {
     logOut().then().catch();
   };
 
+  // const isAdmin = false; 
+  const isAdmin = true; 
+  // TODO true
   const NavLink = (
-    <p className="font-bold lg:flex text-xl">
-      <li>
-        <Link to="/">Home</Link>{" "}
-      </li>
-      <li>
-        <Link to="/items">Items</Link>{" "}
-      </li>
-      <li>
-        <Link to="/reserve">Reservation</Link>
-      </li>
-    </p>
+    isAdmin ? 
+    (
+      <p className="font-bold lg:flex text-xl">
+        <li>
+          <Link to='/dashboard'>Admin Home</Link>
+        </li>
+        <li>
+          <Link to='/customer'>Customers</Link>
+        </li>
+        
+      </p>
+    ) : 
+    (
+      <p className="font-bold lg:flex text-xl">
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/items">Items</Link>
+        </li>
+        <li>
+          <Link to="/reserve">Reservation</Link>
+        </li>
+      </p>
+    )
   );
 
   return (
@@ -58,10 +75,11 @@ const Header = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{NavLink}</ul>
         </div>
-
-        <div className="navbar-end">
+        
+        {/* { !isAdmin ? <> </> : <> </>} */}
+        
+          <div className="navbar-end">
           <Link to="/cart" className="text-2xl text-red-600 border-red-600 border-2 p-2 rounded-3xl bg-white">
-          {/* <Link to="/cart" className="text-2xl text-white border-2 p-2 rounded-3xl bg-red-600 border-black"> */}
             <FaCartShopping />
           </Link>
 
@@ -81,6 +99,7 @@ const Header = () => {
             </>
           )}
         </div>
+        
       </div>
     </div>
   );

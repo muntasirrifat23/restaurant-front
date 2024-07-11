@@ -16,7 +16,7 @@ const Cart = () => {
   useEffect(() => {
     if (user && user.email) {
       fetch(`http://localhost:5000/cart?email=${user.email}`)
-        .then((res) => res.json())
+        .then(res => res.json())
         .then((data) => {
           const initializedData = data.map((item) => ({
             ...item,
@@ -91,7 +91,7 @@ const Cart = () => {
       <Helmet>
         <title>Food Court | Cart</title>
       </Helmet>
-      <div className="">
+      <div>
         <div className="w-50 text-center justify-center mt-28">
           <p className="text-center font-bold lg:text-4xl text-3xl italic text-white mb-4">
             <p>Cart of My Food</p>
