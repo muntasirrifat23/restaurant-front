@@ -20,12 +20,9 @@ const Header = () => {
       <li>
         <Link to="/items">Items</Link>{" "}
       </li>
-      {user && <>{/* <li><Link to='/cart'>Cart</Link></li> */}</>}
       <li>
         <Link to="/reserve">Reservation</Link>
       </li>
-      {/* <li><Link to='/login'>Login</Link></li> */}
-      {/* <li><Link to='/register'>Registration</Link></li> */}
     </p>
   );
 

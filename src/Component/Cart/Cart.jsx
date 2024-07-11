@@ -5,7 +5,7 @@ import { AuthContext } from "../Auth/AuthProvider";
 import "./Cart.css";
 import Swal from "sweetalert2";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Cart = () => {
   const [showCart, setShowCart] = useState([]);
@@ -166,10 +166,22 @@ const Cart = () => {
             
           </div>
 
-          <button onClick={handlePayCart} className="payCart bg-green-700 text-white p-2 rounded-lg mx-auto text-center block mt-5 px-20 text-l"
-          >
+            {/* Button */}
+          <div className="flex justify-around">
+          <div>
+            <Link to='/items'>
+            <button className="payCart text-green-700 bg-white p-2 rounded-lg mx-auto text-center block mt-5 px-10 font-bold"> 
+            Add More Order
+            </button></Link>
+          </div>
+
+          <div>
+          <button onClick={handlePayCart} className="payCart bg-green-700 text-white p-2 rounded-lg mx-auto text-center block mt-5 px-20 text-l">
             Payment
           </button>
+          </div>
+          </div>
+
         </div>
       </div>
     </div>

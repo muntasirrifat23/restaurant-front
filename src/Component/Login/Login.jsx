@@ -63,6 +63,7 @@ const Login = () => {
                 const user = result.user;
                 setGoogleUser(user);
                 console.log(user);
+                navigate('/');
             })
             .catch((error) => {
                 console.log('Google Error', error.message);
@@ -76,6 +77,7 @@ const Login = () => {
                 const user = r.user;
                 setGoogleUser(user);
                 console.log(user);
+                navigate('/');
             })
             .catch((error) => {
                 console.log('Git Error', error.message);

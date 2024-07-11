@@ -18,6 +18,7 @@ import Payment from './Component/Payment/Payment.jsx';
 import NotFound from './Header/NotFound.jsx';
 import PrivateRoute from './Component/PrivateRoute/PrivateRoute.jsx';
 import Reserve from './Component/Reserve/Reserve.jsx';
+import Dashboard from './Dashboard/Dashboard.jsx';
 
 const router = createBrowserRouter([
   {
@@ -59,12 +60,24 @@ const router = createBrowserRouter([
         path:'/reserve',
         element: <Reserve></Reserve>
       },
+    ]
+  },
+
+  {
+    path:'/dashboard',
+    element:<Dashboard></Dashboard>,
+    children:[
       {
+        
+      }
+    ]
+  
+  },
+
+   {
         path:'*',
         element:<NotFound></NotFound>
       }
-    ]
-  },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(

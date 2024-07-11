@@ -12,9 +12,9 @@ const Chef = () => {
     return (
         <div>
             {/* {ourChef.length} */}
-            <div className='lg:m-12 m-4'>
+            <div className='lg:m-12 m-4 mt-10'>
             <hr className='border-red-800 mx-auto' style={{ width: '30%' }} />
-            <small className="text-center text-red-800"><p>Our Experienced Food Chef</p>
+            <small className="text-center text-red-800"><p>Meet Our Culinary Masters</p>
             </small>
                 <div className='w-50 text-center justify-center'>
                     <p className='text-center font-bold lg:text-5xl text-3xl italic text-red-800 mb-4'>
