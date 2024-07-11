@@ -1,8 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-// import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
-import { FaTrashCan } from "react-icons/fa6";
+import { FaTrashCan, FaUserGroup } from "react-icons/fa6";
 import Swal from "sweetalert2";
 import useAxiosSecure from "./useAxiosSecure";
 
@@ -23,7 +22,7 @@ const Customer = () => {
   //   .then(data=> showUser(data))
   // },[])
 
-  const handleUser = (id) => {
+  const handleUserDel = (id) => {
     Swal.fire({
       title: "Remove This User?",
       showCancelButton: true,
@@ -34,18 +33,35 @@ const Customer = () => {
       if (result.isConfirmed) {
         axios.delete(`http://localhost:5000/user/${id}`).then((res) => {
           console.log("Delete request successful:", res.data);
+          refetch();
           Swal.fire({
             position: "center",
             icon: "success",
             title: "Deleted",
             showConfirmButton: false,
             timer: 1500
-          });
-          refetch();
+          });     
         });
       }
     });
   };
+
+  const handleRole=(user)=>{
+    axiosSecure.patch(`/user/admin/${user._id}`)
+    .then(res=>{
+      console.log(res.data);
+      if(res.data.modifiedCount>0){
+        refetch();
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: `${user.name} Is New Admin`,
+          showConfirmButton: false,
+          timer: 1500
+        });
+      }
+    })
+  }
 
   return (
     <div className="hero-content">
@@ -68,7 +84,7 @@ const Customer = () => {
                   <th></th>
                   <th>Name</th>
                   <th>Email</th>
-                  <th>Password</th>
+                  <th>Role</th>
                   <th>Remove</th>
                 </tr>
               </thead>
@@ -81,20 +97,29 @@ const Customer = () => {
                     </td>
                     <td className=" font-semibold text-lg">{user.email}                 
                     </td>
-                    <td className=" font-semibold text-lg ">{user.password}</td>
                     <td>
-                      <button onClick={() => handleUser(user._id)} className="btn btn-error btn-md delIcon">
+                      {
+                        user.role === 'admin' ? 'Admin' :
+                        <>
+                         <button onClick={() => handleRole(user)} className="btn  btn-md roleIcon bg-blue-800 text-white btn-success text-lg">
+                        <FaUserGroup />
+                      </button>
+                        </>
+                      }   
+                    </td>
+                    
+                    <td>
+                      <button onClick={() => handleUserDel(user._id)} className="btn btn-error btn-md delIcon">
                         <FaTrashCan />
                       </button>
+                     
                     </td>
                   </tr>
                 </tbody>
               ))}
             </table>
 
-            <div className="flex justify-center users-center gap-1 mt-5 font-semibold text-xl total p-4 text-white">
-              {/* Total Price of Your Food BDT : <FaBangladeshiTakaSign /> {price} */}
-            </div>
+           
           </div>
         </div>
       </div>
