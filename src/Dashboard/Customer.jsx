@@ -7,10 +7,18 @@ import useAxiosSecure from "./useAxiosSecure";
 
 const Customer = () => {
   const axiosSecure = useAxiosSecure();
-  const { data: user =[], refetch } = useQuery({
+  const { data: user = [], refetch } = useQuery({
     queryKey: ["user"],
     queryFn: async () => {
-      const res = await axiosSecure.get("/user");
+      const token = localStorage.getItem('access-token');
+      if (!token) {
+        throw new Error("No access token found in localStorage");
+      }
+      const res = await axiosSecure.get("/user", {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
       return res.data;
     },
   });
@@ -64,20 +72,20 @@ const Customer = () => {
   }
 
   return (
-    <div className="hero-content">
+    <div className="hero-content mx-auto">
       <Helmet>
         <title>Food Court | Customer</title>
       </Helmet>
 
-      <div className="mt-24">
-        <div className="text-center font-bold lg:text-5xl text-3xl italic text-red-800 mb-4">
+      <div className="mt-24 justify-center">
+        <div className="text-center font-bold text-4xl italic text-red-800 mb-4">
           All Customers
         </div>
 
         <div>
           <p className="font-semibold">Total Customers : {user.length}</p>
 
-          <div className="mb-12 max-w-5xl w-full mt-5">
+          <div className="mb-12 mt-5">
             <table className="table">
               <thead className="bg-red-700 text-white text-lg">
                 <tr className="text-center">

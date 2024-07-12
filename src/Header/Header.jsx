@@ -4,6 +4,7 @@ import { useContext } from "react";
 import { AuthContext } from "../Component/Auth/AuthProvider";
 import Marquee from "react-fast-marquee";
 import { FaCartShopping } from "react-icons/fa6";
+import useAdmin from "../Dashboard/useAdmin";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -12,9 +13,16 @@ const Header = () => {
     logOut().then().catch();
   };
 
-  // const isAdmin = false; 
-  const isAdmin = true; 
+  // const isAdmin = true; 
+  // const [isAdmin] = useAdmin(); 
   // TODO true
+  // const [isAdmin, isAdminLoading] = useAdmin();
+  const [isAdmin] = useAdmin();
+
+  // if (isAdminLoading) {
+  //   return <div>Loading...</div>;
+  // }
+
   const NavLink = (
     isAdmin ? 
     (
