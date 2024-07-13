@@ -15,9 +15,11 @@ import Payment from "./Component/Payment/Payment.jsx";
 import NotFound from "./Header/NotFound.jsx";
 import PrivateRoute from "./Component/PrivateRoute/PrivateRoute.jsx";
 import Reserve from "./Component/Reserve/Reserve.jsx";
-import Dashboard from "./Dashboard/Dashboard.jsx";
+import Admin from "./Dashboard/Admin/Admin.jsx";
 import Customer from "./Dashboard/Customer.jsx";
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import AddItems from "./Dashboard/AddItems/AddItems.jsx";
+import AllItems from "./Dashboard/AllItems/AllItems.jsx";
 
 const router = createBrowserRouter([
   {
@@ -33,11 +35,11 @@ const router = createBrowserRouter([
         path: "/items/:id",
         element: <Details></Details>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/item/${params.id}`),
+          fetch(`http://localhost:5000/items/${params.id}`),
       },
       {
         path: "/items",
-        loader: () => fetch("/public/items.json"),
+        loader: () => fetch("http://localhost:5000/items"),
         element: <Items></Items>,
       },
       {
@@ -67,12 +69,21 @@ const router = createBrowserRouter([
 
       //
       {
-        path: "/dashboard",
-        element: <Dashboard></Dashboard>,
+        path: "/admin",
+        element: <Admin></Admin>,
       },
       {
-        path: "/customer",
+        path: "/users",
         element: <Customer></Customer>,
+      },
+      {
+        path: "/allItems",
+        loader: () => fetch("http://localhost:5000/items"),
+        element: <AllItems></AllItems>,
+      },
+      {
+        path: "/addItems",
+        element: <AddItems></AddItems>,
       },
     ],
   },

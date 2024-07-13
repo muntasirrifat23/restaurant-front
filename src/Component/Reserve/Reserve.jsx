@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./Reserve.css";
 import { BiFoodMenu } from "react-icons/bi";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 const Reserve = () => {
   const [seats, setSeats] = useState("");
@@ -71,6 +72,9 @@ const Reserve = () => {
 
   return (
     <div className="hero ">
+       <Helmet>
+        <title>Food Court | Reservation</title>
+      </Helmet>
       <div className="mt-24 reserveImg mb-20">
         <div className="reserveText text-center">
           <p className="font-semibold text-6xl mb-12 mt-24">Reservations</p>

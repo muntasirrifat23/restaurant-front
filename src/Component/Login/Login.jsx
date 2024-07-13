@@ -8,6 +8,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Auth/AuthProvider";
 import { IoLogInOutline } from "react-icons/io5";
 import './Login.css'
+import { Helmet } from "react-helmet";
 const Login = () => {
     const auth = getAuth(app);
     const provider = new GoogleAuthProvider();
@@ -97,8 +98,10 @@ const Login = () => {
     }
 
     return (
-        <div>
-            <div className="hero ">
+        <div className="hero">
+            <Helmet>
+        <title>Food Court | Login</title>
+      </Helmet>
                 <div className="mt-16 mb-8 loginImg">
                     <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-lime-200 border-4 border-b-lime-700">
                         <h1 className="text-5xl font-bold mx-auto p-4 text-red-800">Login Here</h1>
@@ -154,7 +157,6 @@ const Login = () => {
                     </div>
                 </div>
             </div>
-        </div>
     );
 };
 

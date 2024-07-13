@@ -74,7 +74,7 @@ const Customer = () => {
   return (
     <div className="hero-content mx-auto">
       <Helmet>
-        <title>Food Court | Customer</title>
+        <title>Food Court | Users</title>
       </Helmet>
 
       <div className="mt-24 justify-center">

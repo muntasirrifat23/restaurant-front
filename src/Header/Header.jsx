@@ -28,10 +28,16 @@ const Header = () => {
     (
       <p className="font-bold lg:flex text-xl">
         <li>
-          <Link to='/dashboard'>Admin Home</Link>
+          <Link to='/admin'>Admin</Link>
         </li>
         <li>
-          <Link to='/customer'>Customers</Link>
+          <Link to='/users'>Users</Link>
+        </li>
+        <li>
+          <Link to='/allItems'>All Items</Link>
+        </li>
+        <li>
+          <Link to='/addItems'>Add Items</Link>
         </li>
         
       </p>
