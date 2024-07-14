@@ -15,13 +15,13 @@ const Header = () => {
 
   // const isAdmin = true; 
   // const [isAdmin] = useAdmin(); 
-  // TODO true
-  // const [isAdmin, isAdminLoading] = useAdmin();
-  const [isAdmin] = useAdmin();
+  // TODO update 14-07-24
+  const [isAdmin, isAdminLoading] = useAdmin();
+  // const [isAdmin] = useAdmin();
 
-  // if (isAdminLoading) {
-  //   return <div>Loading...</div>;
-  // }
+  if (isAdminLoading) {
+    return <div>Loading...</div>;
+  }
 
   const NavLink = (
     isAdmin ? 
@@ -35,6 +35,9 @@ const Header = () => {
         </li>
         <li>
           <Link to='/allItems'>All Items</Link>
+        </li>
+        <li>
+          <Link to='/updateItems'>Update Items</Link>
         </li>
         <li>
           <Link to='/addItems'>Add Items</Link>

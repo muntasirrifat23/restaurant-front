@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Helmet } from "react-helmet";
 import { useLoaderData } from "react-router-dom";
-import Card from "../../Component/Items/Card";
 import AllItemsCard from "./ItemsCard";
 
 const AllItems = () => {

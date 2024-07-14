@@ -20,6 +20,7 @@ import Customer from "./Dashboard/Customer.jsx";
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import AddItems from "./Dashboard/AddItems/AddItems.jsx";
 import AllItems from "./Dashboard/AllItems/AllItems.jsx";
+import UpdateItems from "./Dashboard/UpdateItems/UpdateItems.jsx";
 
 const router = createBrowserRouter([
   {
@@ -82,23 +83,15 @@ const router = createBrowserRouter([
         element: <AllItems></AllItems>,
       },
       {
+        path: "/updateItems",
+        element: <UpdateItems></UpdateItems>,
+      },
+      {
         path: "/addItems",
         element: <AddItems></AddItems>,
       },
     ],
   },
-
-  // {
-  //   path:'/dashboard',
-  //   element:<Dashboard></Dashboard>,
-  //   children:[
-  //     {
-  //       path:'/dashboard/allCustomer',
-  //       element:<AllCustomer></AllCustomer>
-  //     }
-  //   ]
-
-  // },
 
   {
     path: "*",
