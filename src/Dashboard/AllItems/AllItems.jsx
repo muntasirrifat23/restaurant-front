@@ -27,7 +27,7 @@ const AllItems = () => {
     return (
         <div className="bg-lime-100">
             <Helmet>
-                <title>Food Court | Items</title>
+                <title>Food Court | All Items</title>
             </Helmet>
             <div className="grid ">
                 <div className="flex justify-center w-full mt-28 lg:mt-28 items-center">

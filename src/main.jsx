@@ -83,10 +83,15 @@ const router = createBrowserRouter([
         element: <AllItems></AllItems>,
       },
       {
-        path: "/updateItems",
+        path: "/items/:id/update",
         element: <UpdateItems></UpdateItems>,
-        // loader: ({ params }) => fetch(`http://localhost:5000/items/${params.id}`),
+        loader: ({ params }) =>fetch(`http://localhost:5000/items/${params.id}/update`),
       },
+      // {
+      //   path: "/items/:id",
+      //   element: <Details></Details>,
+      //   loader: ({ params }) =>fetch(`http://localhost:5000/items/${params.id}`),
+      // },
       {
         path: "/addItems",
         element: <AddItems></AddItems>,

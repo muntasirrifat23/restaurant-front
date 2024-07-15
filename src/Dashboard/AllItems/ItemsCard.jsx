@@ -1,12 +1,13 @@
 import { FaRegStar, FaStar } from "react-icons/fa";
 import "./ItemsCard.css";
 import PropTypes from "prop-types";
-import { FaBangladeshiTakaSign,  FaTrashCan } from "react-icons/fa6";
+import { FaArrowUpFromGroundWater, FaBangladeshiTakaSign,  FaTrashCan } from "react-icons/fa6";
 import Swal from "sweetalert2";
 import axios from "axios";
 import Rating from "react-rating";
 import { useState } from "react";
-
+import { Link } from "react-router-dom";
+import './ItemsCard.css'
 const ItemsCard = ({ item }) => {
   const { name, price, short_details, image, rating, not, long_details, id, _id } = item;
   const [showCart, setShowCart] = useState([]);
@@ -30,6 +31,7 @@ const ItemsCard = ({ item }) => {
     });
   }
 
+  
 
 
 
@@ -74,11 +76,18 @@ const ItemsCard = ({ item }) => {
           </div>
 
           {/* Delete */}
-          {/* <div className="card-actions justify-center"> */}
+          <div className="card-actions justify-center">
               <button className="btn delIcon" onClick={handleItemsDel}>
                 Delete Food <FaTrashCan></FaTrashCan>
               </button>
-          {/* </div> */}
+
+              <Link to={`/items/${_id}/update`}>
+              <button className="btn upItem">
+                Update Food
+               <FaArrowUpFromGroundWater></FaArrowUpFromGroundWater>
+              </button>
+              </Link>
+          </div>
 
         </div>
       </div>
