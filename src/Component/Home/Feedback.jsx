@@ -1,7 +1,27 @@
+import Swal from "sweetalert2";
 
 const Feedback = () => {
     const handleFeedback= e =>{
         e.preventDefault();
+        const name= e.target.name.value;
+        const message= e.target.message.value;
+        const feedback ={name, message};
+        console.log(feedback);
+
+        fetch('http://localhost:5000/feedback', {
+          method: 'POST',
+          headers: {
+              'content-type': 'application/json'
+          },
+          body: JSON.stringify(feedback)
+      })
+          .then(res => res.json())
+          .then(data => {
+              if (data.insertedId) {
+                  Swal.fire("Feedback Receive");
+                  e.target.reset();
+              }
+          })
     }
   return (
     <div className='m-4 lg:m-12 mt-14' >
@@ -24,7 +44,7 @@ const Feedback = () => {
             <input type="text" placeholder="Your Full Name" name="name" required />
           </label>
           <label className="input input-bordered flex items-center m-10">
-            <input type="text" className="w-full" placeholder="Give Us Your Feedback" name="feedback" required />
+            <input type="text" className="w-full" placeholder="Give Us Your Feedback" name="message" required />
           </label>
         </div>
 

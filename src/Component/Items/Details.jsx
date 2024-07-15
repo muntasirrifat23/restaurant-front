@@ -17,10 +17,10 @@ const Details = () => {
 
   if (!details) {
     return (
-      <div className="hero-content">
+      <div className="hero-content mx-auto">
         <div className="flex items-center justify-center mt-32">
           <div className="flex flex-col items-center ">
-            <p className="text-center">Please wait, food details loading...</p>
+            <p>Please wait, food details loading...</p>
             <div className="loading loading-bars loading-lg text-lime-800 mt-4"></div>
           </div>
         </div>
@@ -29,25 +29,29 @@ const Details = () => {
   }
 
   return (
-    <div className="grid place-items-center gap-4">
+    <div className="grid place-items-center gap-4 mx-auto">
       <Helmet>
         <title>Food Court | Details</title>
       </Helmet>
       <div>
-        <div key={details.id} className="w-full mt-24">
-          <div className=" shadow-xl h-full border-4 border-b-lime-700 bg-lime-200">
-            <div className="flex">
-              <div className="w-1/2">
-                <img src={details.image} className="rounded-xl lg:h-full" />
+        <div key={details.id} className="w-full mt-28">
+          <p className="font-semibold text-red-700 text-3xl text-center mb-5">
+            Details of {details.name}
+          </p>
+
+          <div className="card-body shadow-xl h-full border-4 border-b-red-700 lg:mx-20 mx-10 mb-10 rounded-lg">
+            <div className="lg:flex lg:justify-around">
+              <div className=" w-full">
+                <img src={details.image} className="rounded-xl lg:h-full w-full" />
               </div>
 
-              <div className="w-1/2 p-4">
-                <h2 className="card-title text-red-700 mx-auto text-3xl">
+              <div className="p-4">
+                <h2 className="card-title text-red-700 text-3xl mb-2 text-center">
                   {details.name}
                 </h2>
-                <p className="font-bold text-xl">{details.short_details}</p>
+                <p className="font-bold text-xl mb-2">{details.short_details}</p>
                 <p>{details.long_details}</p>
-                <div className="flex mt-2 text-red-700 font-semibold text-center gap-5">
+                <div className="flex mt-2 text-red-700 font-semibold  gap-5 justify-around">
                   <p>Price: {details.price}$</p>
                   <p>Origin: {details.origin}</p>
                   <p>
@@ -63,14 +67,15 @@ const Details = () => {
                 </div>
 
                 <div className="card-actions justify-center mt-4">
-                  <Link to="/items" className="flex gap-4 text-xl items-center">
-                    <button className="btn bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white font-bold w-full">
+                  <Link to="/items" className="flex gap-4 text-xl items-center px-10">
+                    <button className="btn bg-gradient-to-r from-red-500 via-red-500 to-red-500 text-white font-bold ">
                       <FaArrowLeft />
                       Back
                     </button>
                   </Link>
                 </div>
               </div>
+
             </div>
           </div>
         </div>

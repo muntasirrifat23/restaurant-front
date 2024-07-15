@@ -79,11 +79,11 @@ const Customer = () => {
 
       <div className="mt-24 justify-center">
         <div className="text-center font-bold text-4xl italic text-red-800 mb-4">
-          All Customers
+          All Users
         </div>
 
         <div>
-          <p className="font-semibold">Total Customers : {user.length}</p>
+          <p className="font-semibold">Total Users : {user.length}</p>
 
           <div className="mb-12 mt-5">
             <table className="table">

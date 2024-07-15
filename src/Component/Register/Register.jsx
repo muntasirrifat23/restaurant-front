@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../Auth/AuthProvider";
 import { Helmet } from "react-helmet";
 import './Register.css'
+import Swal from "sweetalert2";
 const Register = () => {
     const auth = getAuth(app);
     const [userError, setUserError] = useState('');
@@ -30,9 +31,9 @@ const Register = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
                 if (data.insertedId) {
-                    alert("Food Court Registration Complete");
+                    Swal.fire("Food Court Registration Complete");
+                    e.target.reset();
                 }
             })
 

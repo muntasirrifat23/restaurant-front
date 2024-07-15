@@ -11,6 +11,7 @@ import Rating from "react-rating";
 
 const Card = ({ item }) => {
   const { name, price, short_details, image, rating, id, not } = item;
+  
   const { user } = useContext(AuthContext);
   const [addedItems, setAddedItems] = useState([]);
   const navigate = useNavigate();
@@ -30,6 +31,13 @@ const Card = ({ item }) => {
   }, [user]);
 
   const handleCart = (item) => {
+    if(!user){
+      Swal.fire(
+        "Please Do login"
+      ).then(()=>{
+        navigate('/login')
+      })
+    }
     if (user && user.email) {
       if (addedItems.includes(id)) {
         Swal.fire(

@@ -16,12 +16,10 @@ const Header = () => {
   // const isAdmin = true; 
   // const [isAdmin] = useAdmin(); 
   // TODO update 14-07-24
-  const [isAdmin, isAdminLoading] = useAdmin();
+  const [isAdmin] = useAdmin();
   // const [isAdmin] = useAdmin();
 
-  if (isAdminLoading) {
-    return <div>Loading...</div>;
-  }
+ 
 
   const NavLink = (
     isAdmin ? 
