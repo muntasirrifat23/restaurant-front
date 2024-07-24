@@ -6,12 +6,12 @@ const AddItems = () => {
     e.preventDefault();
     const name = e.target.name.value;
     const price = e.target.price.value;
-    const short = e.target.short.value;
-    const long = e.target.long.value;
+    const short_details = e.target.short_details.value;
+    const long_details = e.target.long_details.value;
     const rating = e.target.rating.value;
     const origin = e.target.origin.value;
     const image = e.target.image.value;
-    const addItemDetails = { name, price, short, long, rating, origin, image };
+    const addItemDetails = { name, price, short_details, long_details, rating, origin, image };
     console.log(addItemDetails);
 
     fetch("http://localhost:5000/items", {
@@ -53,14 +53,14 @@ const AddItems = () => {
              {/* Line 2 */}
              <div className="flex justify-between gap-4 text-black mt-4">
             <label className="input input-bordered flex items-center gap-2 w-full">
-              <input type="text" placeholder="Food Short Details" name="short" required />
+              <input type="text" placeholder="Food Short Details" name="short_details" required />
             </label>
           </div>
 
            {/* Line 3 */}
           <div className="flex justify-between gap-4 text-black mt-4">
           <label className="input input-bordered flex items-center w-full">
-              <input type="text" placeholder="Food Long Details" name="long" required />
+              <input type="text" placeholder="Food Long Details" name="long_details" required />
             </label>
           </div>
 

@@ -50,14 +50,7 @@ const Review = () => {
                         <SwiperSlide
                             key={review.id}
                             className="text-center review-slide bg-lime-300 text-black p-2"
-                            style={{
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                height: '250px',
-                            }}
-
-                        >
+                            style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '250px', }} >
                             <div>
                                 <p>{review.review}</p>
                                 <hr />

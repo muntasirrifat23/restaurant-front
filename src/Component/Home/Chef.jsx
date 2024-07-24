@@ -37,11 +37,9 @@ const Chef = () => {
                                     <p className="text-sm">{chef.details}</p>
                                 </div>
                             </div>
-
                         </div>)
                     }
                 </div>
-
 
             </div>
 

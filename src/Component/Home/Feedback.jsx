@@ -1,7 +1,7 @@
 import Swal from "sweetalert2";
 
 const Feedback = () => {
-    const handleFeedback= e =>{
+    const handleFeedback= (e) =>{
         e.preventDefault();
         const name= e.target.name.value;
         const message= e.target.message.value;
@@ -26,9 +26,8 @@ const Feedback = () => {
   return (
     <div className='m-4 lg:m-12 mt-14' >
     <hr className='border-red-800 mx-auto' style={{ width: '40%' }} />
-    <small className="text-center text-red-800"><p>
-    Enhancing Your Dining Experience
-    </p>
+    <small className="text-center text-red-800">
+    <p> Enhancing Your Dining Experience </p>
     </small>
     <div className='w-50 text-center justify-center'>
         <p className='text-center font-bold lg:text-5xl text-3xl italic text-red-800 mb-4'>

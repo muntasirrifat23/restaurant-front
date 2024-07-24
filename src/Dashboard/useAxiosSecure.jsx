@@ -29,7 +29,7 @@ const useAxiosSecure = () => {
       async (error) => {
         if (error.response && (error.response.status === 401 || error.response.status === 403)) {
           await logOut();
-          navigate('/login'); // Ensure this runs within a useEffect to avoid throttling
+          navigate('/login');
         }
         return Promise.reject(error);
       }

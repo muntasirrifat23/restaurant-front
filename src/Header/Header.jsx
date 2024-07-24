@@ -35,9 +35,6 @@ const Header = () => {
           <Link to='/allItems'>All Items</Link>
         </li>
         <li>
-          <Link to='/updateItems'>Update Items</Link>
-        </li>
-        <li>
           <Link to='/addItems'>Add Items</Link>
         </li>
         

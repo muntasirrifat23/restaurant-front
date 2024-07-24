@@ -9,8 +9,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import './ItemsCard.css'
 const ItemsCard = ({ item }) => {
-  const { name, price, short_details, image, rating, not, long_details, id, _id } = item;
-  const [showCart, setShowCart] = useState([]);
+  const { name, price, short_details, image, rating, not, long_details, _id } = item;
+  const [showItems, setShowItems] = useState([]);
 
   const handleItemsDel =()=>{
     Swal.fire({
@@ -24,24 +24,17 @@ const ItemsCard = ({ item }) => {
       if (result.isConfirmed) {
         axios.delete(`http://localhost:5000/items/${_id}`).then((res) => {
           console.log("Delete request successful:", res.data);
-          const updatedCart = showCart.filter((item) => item._id !== _id);
-          setShowCart(updatedCart);
+          const deleteItem = showItems.filter((item) => item._id !== _id);
+          setShowItems(deleteItem);
         });
       }
     });
   }
 
-  
-
-
-
   return (
     <div>
       <div
-        className={`card card-compact shadow-xl ${
-          not ? "bg-slate-300 notIn" : "bg-lime-200"
-        } border-4 border-b-lime-700`}
-      >
+        className={`card card-compact shadow-xl ${not ? "bg-slate-300 notIn" : "bg-lime-200"} border-4 border-b-lime-700`}>
         {not && <div className="notText">Out of Stock</div>}
         <figure>
           <img src={image} alt="Food" className="rounded-xl p-4 cImage" />
