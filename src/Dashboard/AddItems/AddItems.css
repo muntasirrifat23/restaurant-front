@@ -1,0 +1,9 @@
+.addItemsImg{
+    background-image: url('../../../public/OthersPic/main-home-slide3.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 100hv;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

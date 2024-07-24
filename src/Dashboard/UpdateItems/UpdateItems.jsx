@@ -1,10 +1,12 @@
 import { Helmet } from "react-helmet";
-import { useLoaderData } from "react-router-dom";
+import { FaArrowLeft } from "react-icons/fa";
+import { Link, useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const UpdateItems = () => {
   const update =useLoaderData();
   const { name, price, short_details, long_details, rating, origin, _id } = update;
+  const navigate= useNavigate();
 
   const handleUpdate = (e) => {
     e.preventDefault();
@@ -30,6 +32,7 @@ const UpdateItems = () => {
         console.log(data);
         if (data.matchedCount ==1 ) {
           Swal.fire("Food Updated");
+          navigate('/allItems');
         } 
         else {
           Swal.fire("Update Failed");
@@ -39,13 +42,14 @@ const UpdateItems = () => {
 
 
     return (
-        <div className="hero-content mx-auto">
+      <div className="addItemsImg">
+        {/* <div className="hero-content mx-auto"> */}
             <Helmet>
         <title>Food Court | Update Items</title>
       </Helmet>
 
-      <div className="mb-10 text-center">
-           <p className="font-semibold lg:text-5xl text-3xl mb-12 mt-24 bg-lime-600 text-white rounded-md p-4">
+      <div className="mb-10 text-center mt-20">
+           <p className="font-semibold lg:text-6xl text-4xl mb-12 mt-24 bg-lime-600 text-white rounded-md p-4">
           Update {name} To The Items
         </p>
 
@@ -90,7 +94,20 @@ const UpdateItems = () => {
             </label>
           </div>
          
-          <button className="btn btn-success bg-lime-700 font-bold text-white mt-5">Update Food</button>
+         <div className="flex justify-center">
+         <button className="btn btn-success bg-lime-700 font-bold text-white mt-5">Update Food</button>
+
+         <div>
+         <Link to="/allItems" className="gap-4 text-xl items-center ml-5">
+          <button className="btn btn-error bg-red-700 font-bold text-white mt-5">
+           <FaArrowLeft /> Back
+        </button>
+        </Link>
+         </div>
+
+         
+         </div>
+        
         </form>
             </div>
         </div>

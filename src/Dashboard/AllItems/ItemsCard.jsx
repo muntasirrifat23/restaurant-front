@@ -26,6 +26,7 @@ const ItemsCard = ({ item }) => {
           console.log("Delete request successful:", res.data);
           const deleteItem = showItems.filter((item) => item._id !== _id);
           setShowItems(deleteItem);
+          window.location.reload();
         });
       }
     });
