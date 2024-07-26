@@ -104,10 +104,7 @@ const UpdateItems = () => {
         </button>
         </Link>
          </div>
-
-         
          </div>
-        
         </form>
             </div>
         </div>
