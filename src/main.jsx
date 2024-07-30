@@ -21,6 +21,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import AddItems from "./Dashboard/AddItems/AddItems.jsx";
 import AllItems from "./Dashboard/AllItems/AllItems.jsx";
 import UpdateItems from "./Dashboard/UpdateItems/UpdateItems.jsx";
+import AdminPrivate from "./Dashboard/AdminPrivate/AdminPrivate.jsx";
 
 const router = createBrowserRouter([
   {
@@ -71,7 +72,7 @@ const router = createBrowserRouter([
       //
       {
         path: "/admin",
-        element: <Admin></Admin>,
+        element: <AdminPrivate><Admin></Admin> </AdminPrivate>,
       },
       {
         path: "/users",
@@ -80,11 +81,11 @@ const router = createBrowserRouter([
       {
         path: "/allItems",
         loader: () => fetch("http://localhost:5000/items"),
-        element: <AllItems></AllItems>,
+        element: <AdminPrivate><AllItems></AllItems></AdminPrivate>,
       },
       {
         path: "/items/:id/update",
-        element: <UpdateItems></UpdateItems>,
+        element:<AdminPrivate> <UpdateItems></UpdateItems></AdminPrivate>,
         loader: ({ params }) =>fetch(`http://localhost:5000/items/${params.id}/update`),
       },
       {
