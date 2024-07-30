@@ -13,46 +13,39 @@ const Header = () => {
     logOut().then().catch();
   };
 
-  // const isAdmin = true; 
-  // const [isAdmin] = useAdmin(); 
+  // const isAdmin = true;
+  // const [isAdmin] = useAdmin();
   // TODO update 14-07-24
   const [isAdmin] = useAdmin();
   // const [isAdmin] = useAdmin();
 
- 
-
-  const NavLink = (
-    isAdmin ? 
-    (
-      <p className="font-bold lg:flex text-xl">
-        <li>
-          <Link to='/admin'>Admin</Link>
-        </li>
-        <li>
-          <Link to='/users'>Users</Link>
-        </li>
-        <li>
-          <Link to='/allItems'>All Items</Link>
-        </li>
-        <li>
-          <Link to='/addItems'>Add Items</Link>
-        </li>
-        
-      </p>
-    ) : 
-    (
-      <p className="font-bold lg:flex text-xl">
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/items">Items</Link>
-        </li>
-        <li>
-          <Link to="/reserve">Reservation</Link>
-        </li>
-      </p>
-    )
+  const NavLink = isAdmin ? (
+    <p className="font-bold lg:flex text-xl">
+      <li>
+        <Link to="/admin">Admin</Link>
+      </li>
+      <li>
+        <Link to="/users">Users</Link>
+      </li>
+      <li>
+        <Link to="/allItems">All Items</Link>
+      </li>
+      <li>
+        <Link to="/addItems">Add Items</Link>
+      </li>
+    </p>
+  ) : (
+    <p className="font-bold lg:flex text-xl">
+      <li>
+        <Link to="/">Home</Link>
+      </li>
+      <li>
+        <Link to="/items">Items</Link>
+      </li>
+      <li>
+        <Link to="/reserve">Reservation</Link>
+      </li>
+    </p>
   );
 
   return (
@@ -70,13 +63,25 @@ const Header = () => {
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4 6h16M4 12h8m-8 6h16"
+                />
               </svg>
             </div>
             {/* small */}
-            <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-white rounded-box w-52"
+            <ul
+              tabIndex={0}
+              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-white rounded-box w-52"
             >
               {NavLink}
             </ul>
@@ -87,31 +92,64 @@ const Header = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{NavLink}</ul>
         </div>
-        
-        {/* { !isAdmin ? <> </> : <> </>} */}
-        
-          <div className="navbar-end">
-          <Link to="/cart" className="text-2xl text-red-600 border-red-600 border-2 p-2 rounded-3xl bg-white">
-            <FaCartShopping />
-          </Link>
 
-          {user ? (
-            <div>
-              <button onClick={handleOut} className="ml-3 btn btn-error text-white">
-                Log Out
-              </button>
-            </div>
-          ) : (
-            <>
-              <Link to="/login">
-                <button className="ml-3 btn btn-success text-white">
-                  Log In
-                </button>
+        {/* { !isAdmin ? <> </> : <> </>} */}
+        {!isAdmin ? (
+          <>
+            {/* For Not Admin */}
+            <div className="navbar-end">
+              <Link
+                to="/cart"
+                className="text-2xl text-red-600 border-red-600 border-2 p-2 rounded-3xl bg-white"
+              >
+                <FaCartShopping />
               </Link>
-            </>
-          )}
-        </div>
-        
+
+              {user ? (
+                <div>
+                  <button
+                    onClick={handleOut}
+                    className="ml-3 btn btn-error text-white"
+                  >
+                    Log Out
+                  </button>
+                </div>
+              ) : (
+                <>
+                  <Link to="/login">
+                    <button className="ml-3 btn btn-success text-white">
+                      Log In
+                    </button>
+                  </Link>
+                </>
+              )}
+            </div>
+          </>
+        ) : (
+          <>
+            {/* For Not Admin */}
+            <div className="navbar-end">
+              {user ? (
+                <div>
+                  <button
+                    onClick={handleOut}
+                    className="ml-3 btn btn-error text-white"
+                  >
+                    Log Out
+                  </button>
+                </div>
+              ) : (
+                <>
+                  <Link to="/login">
+                    <button className="ml-3 btn btn-success text-white">
+                      Log In
+                    </button>
+                  </Link>
+                </>
+              )}
+            </div>
+          </>
+        )}
       </div>
     </div>
   );
