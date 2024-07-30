@@ -35,7 +35,7 @@ const Details = () => {
       </Helmet>
       <div>
         <div key={details.id} className="w-full mt-28">
-          <p className="font-semibold text-red-700 text-3xl text-center mb-5">
+          <p className="font-semibold text-red-700 text-4xl text-center mb-5 italic">
             Details of {details.name}
           </p>
 
@@ -66,15 +66,15 @@ const Details = () => {
                   </p>
                 </div>
 
-                <div className="card-actions justify-center mt-4">
-                  <Link to="/items" className="flex gap-4 text-xl items-center px-10">
-                    <button className="btn bg-gradient-to-r from-red-500 via-red-500 to-red-500 text-white font-bold ">
+                {/* <div className="card-actions justify-center mt-4 w-full"> */}
+                  <Link to="/items" className="flex gap-4 items-center px-20 max-w-full">
+                    <button className="btn bg-gradient-to-r from-red-500 via-red-500 to-red-500 text-white font-bold w-full mt-6 text-2xl">
                       <FaArrowLeft />
                       Back
                     </button>
                   </Link>
                 </div>
-              </div>
+              {/* </div> */}
 
             </div>
           </div>
