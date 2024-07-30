@@ -90,7 +90,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/addItems",
-        element: <AddItems></AddItems>,
+        element: <AdminPrivate><AddItems></AddItems></AdminPrivate>,
       },
     ],
   },
