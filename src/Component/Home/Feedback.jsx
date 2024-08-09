@@ -5,7 +5,12 @@ const Feedback = () => {
         e.preventDefault();
         const name= e.target.name.value;
         const message= e.target.message.value;
-        const feedback ={name, message};
+        const rating= parseFloat(e.target.rating.value);
+        if (rating < 0 || rating > 5) {
+          Swal.fire("Rating must be between 0 and 5");
+          return;
+      }
+        const feedback ={name, message, rating};
         console.log(feedback);
 
         fetch('http://localhost:5000/feedback', {
@@ -44,6 +49,9 @@ const Feedback = () => {
           </label>
           <label className="input input-bordered flex items-center m-10">
             <input type="text" className="w-full" placeholder="Give Us Your Feedback" name="message" required />
+          </label>
+          <label className="input input-bordered flex items-center m-10">
+            <input type="number" className="w-full" placeholder="Give Us Your Rating Number" name="rating" required min={0} max={5} step={0.1}/>
           </label>
         </div>
 
