@@ -2,51 +2,61 @@
     {
         "id": 1,
         "name": "Mohammad Rahman",
-        "review": "Amazing food and great atmosphere. Highly recommend the truffle pasta."
+        "review": "Amazing food and great atmosphere. Highly recommend the truffle pasta.",
+        "rating": 4.8
     },
     {
         "id": 2,
         "name": "Fatima Begum",
-        "review": "Fresh sushi with a wide variety of rolls. Service was prompt and friendly."
+        "review": "Fresh sushi with a wide variety of rolls. Service was prompt and friendly.",
+        "rating": 4.2
     },
     {
         "id": 3,
         "name": "Abdul Haque",
-        "review": "Delicious homemade pasta and generous portions. The carbonara was a standout."
+        "review": "Delicious homemade pasta and generous portions. The carbonara was a standout.",
+        "rating": 4.7
     },
     {
         "id": 4,
         "name": "Ayesha Khan",
-        "review": "Juicy burgers with creative toppings. The sweet potato fries were excellent."
+        "review": "Juicy burgers with creative toppings. The sweet potato fries were excellent.",
+        "rating": 4.4
     },
     {
         "id": 5,
         "name": "Nazrul Islam",
-        "review": "Authentic tacos with a variety of fillings. The carnitas were especially tasty."
+        "review": "Authentic tacos with a variety of fillings. The carnitas were especially tasty.",
+        "rating": 4.3
     },
     {
         "id": 6,
         "name": "Taslima Akhtar",
-        "review": "Perfectly crispy crust and fresh toppings. The margherita pizza was a hit."
+        "review": "Perfectly crispy crust and fresh toppings. The margherita pizza was a hit.",
+        "rating": 4.9
     },
     {
         "id": 7,
         "name": "Shafiqul Alam",
-        "review": "Tender steaks cooked to perfection. The ribeye was melt-in-your-mouth good."
+        "review": "Tender steaks cooked to perfection. The ribeye was melt-in-your-mouth good.",
+        "rating": 4.8
     },
     {
         "id": 8,
         "name": "Farhana Ahmed",
-        "review": "Creative and flavorful vegan dishes. The tofu stir-fry was outstanding."
+        "review": "Creative and flavorful vegan dishes. The tofu stir-fry was outstanding.",
+        "rating": 4.5
     },
     {
         "id": 9,
         "name": "Jamal Uddin",
-        "review": "Fresh and tasty seafood. The lobster roll was packed with flavor."
+        "review": "Fresh and tasty seafood. The lobster roll was packed with flavor.",
+        "rating": 4.4
     },
     {
         "id": 10,
         "name": "Rima Chowdhury",
-        "review": "Decadent desserts and great coffee. The chocolate lava cake is a must-try."
+        "review": "Decadent desserts and great coffee. The chocolate lava cake is a must-try.",
+        "rating": 4.9
     }
 ]
