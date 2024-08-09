@@ -1,30 +1,30 @@
 [
       {
         "id": 1,
-        "name": "Gordon Ramsay",
+        "name": "Mizanur Rahman",
         "pos": "Head Chef",
-        "details": "Gordon Ramsay is a British chef known for his fiery temper and exceptional culinary skills. His Beef Wellington is a signature dish that features perfectly cooked beef wrapped in puff pastry.",
+        "details": "Known for his expertise in traditional Bangladeshi cuisine, Chef Mizanur has been influential in popularizing local dishes through television shows and cookbooks.",
         "pic": "./Chef/chef1.jpg"
       },
       {
         "id": 2,
-        "name": "Thomas Keller",
+        "name": "Kishwar Chowdhury",
         "pos": "Observe Food Presentation",
-        "details": "Thomas Keller is an American chef, famous for his meticulous approach to cooking and his critically acclaimed restaurants, such as The French Laundry.",
+        "details": "Kishwar Chowdhury is a renowned Bangladeshi chef known for her expertise in both traditional and modern Bangladeshi cuisine. She is recognized for her innovative recipes.",
         "pic": "./Chef/chef2.jpeg"
       },
       {
         "id": 3,
-        "name": "Massimo Bottura",
+        "name": "Sayeed Ahmed ",
         "pos": "Monitor Food Quality ",
-        "details": "Massimo Bottura is an Italian chef and owner of Osteria Francescana, a three-Michelin-star restaurant. His innovative dish, Five Ages of Parmigiano Reggiano",
+        "details": "With a focus on modernizing dishes, Chef Sayeed combines traditional flavors with contemporary cooking techniques. His work often features in high-end restaurants and culinary magazines.",
         "pic": "./Chef/chef3.jpeg"
       },
       {
         "id": 4,
-        "name": "Alice Waters",
+        "name": "Rahima Sultana",
         "pos": "Present Dishes",
-        "details": "Alice Waters is an American chef and food activist, known for her role in the farm-to-table movement.",
+        "details": "A pioneer in promoting Bangladeshi food, Chef Rahima is renowned for her expertise in many dishes.  She has gained recognition for her ability to elevate street food to fine dining standards.",
         "pic": "./Chef/chef4.jpg"
       }
     ]

@@ -14,13 +14,14 @@ const Payment = () => {
 
     fetch("http://localhost:5000/payment", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: { "content-type" : "application/json" },
       body: JSON.stringify(paymentData),
     })
       .then((res) => res.json())
       .then((data) => {
         if (data.status === "SUCCESS") {
           window.open(data.redirectURL, "_blank");
+          console.log(paymentData);
         } else {
           Swal.fire("Payment Failed", data.message, "error");
         }
