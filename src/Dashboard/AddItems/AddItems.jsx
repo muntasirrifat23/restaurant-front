@@ -5,24 +5,19 @@ import { useNavigate } from "react-router-dom";
 
 const AddItems = () => {
   const navigate = useNavigate();
-  const handleAddItems = (e) => {
+  const handleAddItems = async (e) => {
     e.preventDefault();
-    const name = e.target.name.value;
-    const price = e.target.price.value;
-    const short_details = e.target.short_details.value;
-    const long_details = e.target.long_details.value;
-    const rating = e.target.rating.value;
-    const origin = e.target.origin.value;
-    const image = e.target.image.value;
-    const addItemDetails = { name, price, short_details, long_details, rating, origin, image };
-    console.log(addItemDetails);
-
+    const formData = new FormData();
+    formData.append('name', e.target.name.value);
+    formData.append('price', e.target.price.value);
+    formData.append('short_details', e.target.short_details.value);
+    formData.append('long_details', e.target.long_details.value);
+    formData.append('rating', e.target.rating.value);
+    formData.append('origin', e.target.origin.value);
+    formData.append('image', e.target.image.files[0]);
     fetch("http://localhost:5000/items", {
       method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(addItemDetails),
+      body: formData,
     })
     .then((res) => res.json())
     .then((data) => {
@@ -33,7 +28,8 @@ const AddItems = () => {
         });
       }
     });
-};
+  };
+
 
   return (
     <div className="addItemsImg">

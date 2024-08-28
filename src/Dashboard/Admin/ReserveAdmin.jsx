@@ -52,7 +52,7 @@ const ReserveAdmin = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
+    <div className="flex flex-col items-center justify-center">
       <div className="w-full max-w-7xl px-4 py-6">
         <div className="text-center mb-8">
           <p className="font-bold lg:text-4xl text-3xl text-green-800">

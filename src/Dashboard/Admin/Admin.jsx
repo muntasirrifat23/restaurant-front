@@ -20,7 +20,7 @@ const Admin = () => {
       <Helmet>
         <title>Food Court | Admin</title>
       </Helmet>
-      <div className="w-full max-w-7xl mt-16">
+      <div className="w-full max-w-7xl mt-24">
         <p className="text-center font-bold text-4xl italic text-red-800 mb-4">
           Admin Home Page
         </p>
