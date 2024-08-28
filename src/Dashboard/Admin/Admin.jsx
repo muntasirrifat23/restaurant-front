@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { FaClipboardList, FaCommentDots, FaUsers, FaUtensils } from "react-icons/fa";
 import PayDetails from "./PayDetails";
+import Feedback from "./Feedback";
+import ReserveAdmin from "./ReserveAdmin";
 
 const Admin = () => {
   const [adminShow, setAdminShow] = useState([]);
@@ -18,7 +20,7 @@ const Admin = () => {
       <Helmet>
         <title>Food Court | Admin</title>
       </Helmet>
-      <div className="w-full max-w-7xl p-6 mt-16">
+      <div className="w-full max-w-7xl mt-16">
         <p className="text-center font-bold text-4xl italic text-red-800 mb-4">
           Admin Home Page
         </p>
@@ -57,19 +59,27 @@ const Admin = () => {
             </div>
           </div>
 
-          <div className="stat bg-red-200 text-red-800 p-4 rounded-md flex items-center justify-center">
+          <div className="stat bg-pink-200 text-pink-800 p-4 rounded-md flex items-center justify-center">
             <FaCommentDots className="text-3xl lg:text-5xl mr-3" />
             <div>
               <div className="stat-title text-black font-bold">Payment</div>
               <div className="stat-value">{adminShow.payment}</div>
             </div>
           </div>
+
+          <div className="stat bg-orange-200 text-orange-800 p-4 rounded-md flex items-center justify-center">
+            <FaCommentDots className="text-3xl lg:text-5xl mr-3" />
+            <div>
+              <div className="stat-title text-black font-bold">Review</div>
+              <div className="stat-value">{adminShow.review}</div>
+            </div>
+          </div>
         </div>
 
-        {/* Payment Details */}
-        <div>
-          <PayDetails />
-        </div>
+          <PayDetails></PayDetails>
+          <ReserveAdmin></ReserveAdmin>
+          <Feedback></Feedback>
+
       </div>
     </div>
   );

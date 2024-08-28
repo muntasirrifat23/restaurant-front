@@ -3,14 +3,14 @@ import { useEffect, useState } from "react";
 import { FaTrashCan } from "react-icons/fa6";
 import Swal from "sweetalert2";
 
-const PayDetails = () => {
-  const [payDetails, setPayDetails] = useState([]);
+const Feedback = () => {
+  const [feedbackDetails, setFeedback] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/paymentData')
+    fetch('http://localhost:5000/feedback')
       .then(res => res.json())
       .then(data => {
-        setPayDetails(data);
+        setFeedback(data);
       });
   }, []);
 
@@ -24,10 +24,10 @@ const PayDetails = () => {
       confirmButtonText: "Yes",
     }).then((result) => {
       if (result.isConfirmed) {
-        axios.delete(`http://localhost:5000/paymentData/${id}`).then((res) => {
+        axios.delete(`http://localhost:5000/feedback/${id}`).then((res) => {
           console.log("Delete request successful:", res.data);
-          const updatedPay = payDetails.filter((pay) => pay._id !== id);
-          setPayDetails(updatedPay);
+          const updatedPay = feedbackDetails.filter((pay) => pay._id !== id);
+          setFeedback(updatedPay);
         });
       }
     });
@@ -43,42 +43,38 @@ const PayDetails = () => {
       confirmButtonText: "Yes, delete all",
     }).then((result) => {
       if (result.isConfirmed) {
-        axios.delete('http://localhost:5000/paymentData').then((res) => {
+        axios.delete('http://localhost:5000/feedback').then((res) => {
           console.log("Delete request successful:", res.data);
-          setPayDetails([]);
+          setFeedback([]);
         });
       }
     });
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
-      <div className="w-full max-w-7xl px-4 py-6">
+    <div className="flex flex-col items-center justify-center">
+      <div className="w-full">
         <div className="text-center mb-8">
-          <p className="font-bold lg:text-4xl text-3xl text-green-800">
-            User Payment Details
+          <p className="font-bold lg:text-4xl text-3xl text-red-800">
+            User Feedback Details
           </p>
         </div>
         <div className="overflow-x-auto">
           <table className="min-w-full bg-white border border-gray-300 rounded-lg shadow-md">
-            <thead className="bg-green-700 text-white text-lg">
+            <thead className="bg-red-800 text-white text-lg">
               <tr>
-                <th className="py-2 px-4">Payment Method</th>
-                <th className="py-2 px-4">Amount</th>
-                <th className="py-2 px-4">Currency</th>
-                <th className="py-2 px-4">Status</th>
-                <th className="py-2 px-4">Date</th>
+                <th className="py-2 px-4">Name</th>
+                <th className="py-2 px-4">Message</th>
+                <th className="py-2 px-4">Rating</th>
                 <th className="py-2 px-4">Action</th>
               </tr>
             </thead>
             <tbody>
-              {payDetails.map(pay => (
+              {feedbackDetails.map(pay => (
                 <tr key={pay._id} className="text-center border-b">
-                  <td className="py-2 px-4 font-semibold">{pay.payment_method}</td>
-                  <td className="py-2 px-4 font-semibold">{pay.amount}</td>
-                  <td className="py-2 px-4 font-semibold">{pay.currency}</td>
-                  <td className="py-2 px-4 font-semibold">{pay.status}</td>
-                  <td className="py-2 px-4 font-semibold">{pay.payment_date}</td>
+                  <td className="py-2 px-4 font-semibold">{pay.name}</td>
+                  <td className="py-2 px-4 font-semibold">{pay.message}</td>
+                  <td className="py-2 px-4 font-semibold">{pay.rating}</td>
                   <td className="py-2 px-4">
                     <button onClick={() => handlePayDelete(pay._id)} className="btn btn-error btn-md">
                       <FaTrashCan />
@@ -90,7 +86,7 @@ const PayDetails = () => {
           </table>
         </div>
         <div className="text-center mt-4">
-        <button onClick={handlePayDeleteAll} className="btn btn-success text-white text-center">Delete All Payment Details</button>
+        <button onClick={handlePayDeleteAll} className="btn btn-error text-white text-center">Delete All User Feedback</button>
         </div>
 
       </div>
@@ -98,4 +94,4 @@ const PayDetails = () => {
   );
 };
 
-export default PayDetails;
+export default Feedback;
