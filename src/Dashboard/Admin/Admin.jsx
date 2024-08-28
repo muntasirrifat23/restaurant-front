@@ -1,7 +1,7 @@
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { FaClipboardList, FaCommentDots, FaUsers, FaUtensils } from "react-icons/fa";
+import PayDetails from "./PayDetails";
 
 const Admin = () => {
   const [adminShow, setAdminShow] = useState([]);
@@ -14,53 +14,65 @@ const Admin = () => {
   }, []);
 
   return (
-    <div className="hero-content mx-auto text-center">
+    <div className="hero-content flex flex-col items-center justify-center min-h-screen max-w-8xl">
       <Helmet>
         <title>Food Court | Admin</title>
       </Helmet>
-      <div className="mt-24">
+      <div className="w-full max-w-7xl p-6 mt-16">
         <p className="text-center font-bold text-4xl italic text-red-800 mb-4">
           Admin Home Page
         </p>
 
         {/* Stat */}
-        <div className="stats text-sm lg:text-3xl gap-2">
-          <div className="stat mr-5 bg-blue-200 text-blue-900 p-4 rounded-md flex items-center ">
-            <FaUsers className="text-3xl lg:text-5xl "></FaUsers>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
+          <div className="stat bg-blue-200 text-blue-900 p-4 rounded-md flex items-center justify-center">
+            <FaUsers className="text-3xl lg:text-5xl mr-3" />
             <div>
               <div className="stat-title text-black font-bold">Users</div>
-              <div className="stat-value ">{adminShow.users}</div>
+              <div className="stat-value">{adminShow.users}</div>
             </div>
           </div>
 
-          <div className="stat mr-5 bg-green-200 text-green-900 p-4 rounded-md flex items-center">
-            <FaUtensils className="text-3xl lg:text-5xl "></FaUtensils>
+          <div className="stat bg-green-200 text-green-900 p-4 rounded-md flex items-center justify-center">
+            <FaUtensils className="text-3xl lg:text-5xl mr-3" />
             <div>
               <div className="stat-title text-black font-bold">Items</div>
               <div className="stat-value">{adminShow.items}</div>
             </div>
           </div>
 
-          <div className="stat mr-5 bg-yellow-200 text-yellow-900 p-4 rounded-md flex items-center ">
-            <FaClipboardList className="text-3xl lg:text-5xl "></FaClipboardList>
+          <div className="stat bg-yellow-200 text-yellow-900 p-4 rounded-md flex items-center justify-center">
+            <FaClipboardList className="text-3xl lg:text-5xl mr-3" />
             <div>
               <div className="stat-title text-black font-bold">Reserve</div>
               <div className="stat-value">{adminShow.reserve}</div>
             </div>
           </div>
 
-          <div className="stat mr-5 bg-red-200 text-red-800 p-4 rounded-md flex items-center">
-            <FaCommentDots className="text-3xl lg:text-5xl"></FaCommentDots>
+          <div className="stat bg-red-200 text-red-800 p-4 rounded-md flex items-center justify-center">
+            <FaCommentDots className="text-3xl lg:text-5xl mr-3" />
             <div>
               <div className="stat-title text-black font-bold">Feedback</div>
               <div className="stat-value">{adminShow.feedback}</div>
             </div>
           </div>
+
+          <div className="stat bg-red-200 text-red-800 p-4 rounded-md flex items-center justify-center">
+            <FaCommentDots className="text-3xl lg:text-5xl mr-3" />
+            <div>
+              <div className="stat-title text-black font-bold">Payment</div>
+              <div className="stat-value">{adminShow.payment}</div>
+            </div>
+          </div>
         </div>
 
+        {/* Payment Details */}
+        <div>
+          <PayDetails />
+        </div>
       </div>
-      </div>
-       );
+    </div>
+  );
 };
 
 export default Admin;
