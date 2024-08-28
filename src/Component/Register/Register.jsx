@@ -68,7 +68,7 @@ const Register = () => {
             <Helmet>
                 <title>Food Court | Registration</title>
             </Helmet>
-            <div className="mt-16 mb-8 registerImg">
+            <div className="mt-64 mb-20 registerImg">
                 <div className="card shrink-0 w-full max-w-md shadow-2xl bg-blue-200">
                     <h1 className="text-5xl font-bold mx-auto p-4">Registration</h1>
                     <form onSubmit={handleRegister} className="card-body">

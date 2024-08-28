@@ -102,7 +102,7 @@ const Login = () => {
             <Helmet>
         <title>Food Court | Login</title>
       </Helmet>
-                <div className="mt-16 mb-8 loginImg">
+                <div className="mt-48 mb-12 loginImg">
                     <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-lime-200 border-4 border-b-lime-700">
                         <h1 className="text-5xl font-bold mx-auto p-4 text-red-800">Login Here</h1>
 

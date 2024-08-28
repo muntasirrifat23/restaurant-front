@@ -22,7 +22,8 @@ const Banner = () => {
   };
 
   return (
-    <div>
+    <div className="hero-content lg:mx-8">
+      <div className="mt-20 w-full lg:mt-0">
       <Carousel
         interval={2000}
         infiniteLoop
@@ -86,6 +87,8 @@ const Banner = () => {
           </div>
         </div>
       </Carousel>
+      </div>
+      
     </div>
   );
 };
