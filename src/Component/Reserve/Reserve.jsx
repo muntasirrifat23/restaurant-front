@@ -36,8 +36,17 @@ const Reserve = () => {
   };
 
   const handleSeat = (e) => {
-    const value = e.target.value === "" ? "" : Math.max(1, Number(e.target.value));
-    setSeats(value);
+    const value = Number(e.target.value);
+    if (value < 1 || value > 5) {
+      Swal.fire({
+        icon: 'warning',
+        title: 'Invalid Seat Count',
+        text: 'You can reserve 1 - 5 seats',
+      });
+      setSeats(""); 
+    } else {
+      setSeats(value);
+    }
   };
 
   const handleReserve=(e)=>{

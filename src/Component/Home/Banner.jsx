@@ -22,7 +22,8 @@ const Banner = () => {
   };
 
   return (
-    <div className="hero-content lg:mx-8">
+    <div className="hero-content mx-auto">
+          {/* <div className="flex flex-col items-center justify-center min-h-screen p-4"> */}
       <div className="mt-20 w-full lg:mt-0">
       <Carousel
         interval={2000}

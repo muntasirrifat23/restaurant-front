@@ -14,10 +14,7 @@ const Header = () => {
   };
 
   // const isAdmin = true;
-  // const [isAdmin] = useAdmin();
-  // TODO update 14-07-24
   const [isAdmin] = useAdmin();
-  // const [isAdmin] = useAdmin();
 
   const NavLink = isAdmin ? (
     <p className="font-bold lg:flex text-xl">

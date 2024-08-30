@@ -66,7 +66,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/reserve",
-        element: <Reserve></Reserve>,
+        element: <PrivateRoute><Reserve></Reserve></PrivateRoute>,
       },
 
       //
