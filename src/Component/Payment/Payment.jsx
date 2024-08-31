@@ -51,7 +51,7 @@ const Payment = () => {
         </button>
 
         <button className="text-green-700 border-green-700 border mt-5 bg-white p-2 rounded-lg mx-auto text-center block px-20 text-xl w-full font-bold">
-        Cash On Delivery</button>
+        Cash Payment</button>
       </div>
     </div>
   );

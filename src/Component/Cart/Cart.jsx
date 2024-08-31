@@ -87,12 +87,12 @@ const Cart = () => {
   };
 
   return (
-    <div className="text-white cartImg">
+    <div className="text-white cartImg w-full">
       <Helmet>
         <title>Food Court | Cart</title>
       </Helmet>
-      <div>
-        <div className="w-50 text-center justify-center mt-28">
+      <div className="ml-24 lg:m-0 max-w-max">
+        <div className=" text-center justify-center mt-28">
           <p className="text-center font-bold lg:text-4xl text-3xl italic text-white mb-4">
             <p>Cart of My Food</p>
             <hr className="text-white mx-auto" style={{ width: "50%" }} />
@@ -167,7 +167,7 @@ const Cart = () => {
           </div>
 
             {/* Button */}
-          <div className="flex justify-around">
+          <div className="lg:flex justify-around ">
           <div>
             <Link to='/items'>
             <button className="payCart text-green-700 bg-white p-2 rounded-lg mx-auto text-center block mt-5 px-10 font-bold"> 

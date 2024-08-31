@@ -6,18 +6,20 @@ import { Helmet } from "react-helmet";
 
 const Reserve = () => {
   const [seats, setSeats] = useState("");
+  const [selectedDate, setSelectedDate] = useState("");
+
 
   const currentDate = () => {
     const today = new Date();
     const year = today.getFullYear();
     const month = String(today.getMonth() + 1).padStart(2, "0");
-    const day = String(today.getDate()).padStart(2, "0");
+    const day = String(today.getDate()+1).padStart(2, "0");
     return `${year}-${month}-${day}`;
   };
 
   const maxDate = () => {
     const today = new Date();
-    today.setDate(today.getDate() + 7);
+    today.setDate(today.getDate() + 5);
     const year = today.getFullYear();
     const month = String(today.getMonth() + 1).padStart(2, "0"); 
     const day = String(today.getDate()).padStart(2, "0"); 
@@ -27,7 +29,7 @@ const Reserve = () => {
   const handleTime = () => {
     const options = [];
     for (let hour = 10; hour <= 21.5; hour++) {
-      for (let minute = 0; minute < 60; minute += 30) {
+      for (let minute = 0; minute < 60; minute += 60) {
         const time = `${String(hour).padStart(2, "0")}:${String(minute).padStart(2, "0")}`;
         options.push(<option key={time} value={time}>{time}</option>);
       }
@@ -60,6 +62,20 @@ const Reserve = () => {
     const note = e.target.note.value;
     const customer = {name, phone, date, time, seat, email, note}
     console.log(customer);
+
+    const today = new Date();
+    const selected = new Date(date);
+    const maxSelectableDate = new Date(today);
+    maxSelectableDate.setDate(today.getDate() + 5);
+
+    if (selected < new Date(currentDate()) || selected > maxSelectableDate) {
+      Swal.fire({
+        icon: 'warning',
+        title: 'Invalid Date',
+        text: 'Can be select next day to after 7 days',
+      });
+      return;
+    }
 
     fetch('http://localhost:5000/reserve', {
       method: 'POST',

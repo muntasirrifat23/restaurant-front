@@ -1,6 +1,24 @@
+import { useState } from "react";
 import Swal from "sweetalert2";
 
 const Feedback = () => {
+  const [doRating, setRating] =useState("");
+
+  const handleRating = (e) => {
+    const value = Number(e.target.value);
+    if (value < 1 || value > 5) {
+      Swal.fire({
+        icon: 'warning',
+        title: 'Invalid Do Rating',
+        text: 'You can give 1 - 5 rating number',
+      });
+      setRating(""); 
+      
+    } else {
+      setRating(value);
+    }
+  };
+
     const handleFeedback= (e) =>{
         e.preventDefault();
         const name= e.target.name.value;
@@ -25,6 +43,7 @@ const Feedback = () => {
               if (data.insertedId) {
                   Swal.fire("Feedback Receive");
                   e.target.reset();
+                  setRating("");
               }
           })
     }
@@ -51,7 +70,7 @@ const Feedback = () => {
             <input type="text" className="w-full" placeholder="Give Us Your Feedback" name="message" required />
           </label>
           <label className="input input-bordered flex items-center m-10">
-            <input type="number" className="w-full" placeholder="Give Us Your Rating Number" name="rating" required min={0} max={5} step={0.1}/>
+            <input type="number" className="w-full" placeholder="Give Us Your Rating Number" name="rating" required onChange={handleRating} value={doRating}/>
           </label>
         </div>
 
