@@ -112,7 +112,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <RouterProvider router={router} />
       </div>
     </AuthProvider>
-    </QueryClientProvider>,
+    </QueryClientProvider>
 
   </React.StrictMode>
 );
