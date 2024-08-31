@@ -64,6 +64,7 @@ const PayDetails = () => {
             <thead className="bg-green-700 text-white text-lg">
               <tr>
                 <th className="py-2 px-4">Payment Method</th>
+                <th className="py-2 px-4">User Email</th>
                 <th className="py-2 px-4">Amount</th>
                 <th className="py-2 px-4">Currency</th>
                 <th className="py-2 px-4">Status</th>
@@ -75,6 +76,7 @@ const PayDetails = () => {
               {payDetails.map(pay => (
                 <tr key={pay._id} className="text-center border-b">
                   <td className="py-2 px-4 font-semibold">{pay.payment_method}</td>
+                  <td className="py-2 px-4 font-semibold">{pay.user_email}</td>
                   <td className="py-2 px-4 font-semibold">{pay.amount}</td>
                   <td className="py-2 px-4 font-semibold">{pay.currency}</td>
                   <td className="py-2 px-4 font-semibold">{pay.status}</td>

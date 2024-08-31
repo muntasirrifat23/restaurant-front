@@ -99,7 +99,7 @@ const Customer = () => {
 
               {user.map((user, index) => (
                 <tbody key={user._id} className="text-center">
-                  <tr className="border-1 border-white">
+                  <tr className="border-1 border-red-900">
                     <td>{index +1}</td>
                     <td className="font-semibold text-lg">{user.name}
                     </td>

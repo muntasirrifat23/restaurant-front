@@ -16,12 +16,12 @@ const Admin = () => {
   }, []);
 
   return (
-    <div className="hero-content flex flex-col items-center justify-center min-h-screen max-w-8xl">
+    <div className="mx-8">
       <Helmet>
         <title>Food Court | Admin</title>
       </Helmet>
-      <div className="w-full max-w-7xl mt-24">
-        <p className="text-center font-bold text-4xl italic text-red-800 mb-4">
+      <div className="w-full lg:grid mx-auto flex flex-col">
+        <p className="text-center mt-28 font-bold text-4xl italic text-red-800 mb-4">
           Admin Home Page
         </p>
 
