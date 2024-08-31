@@ -1,8 +1,13 @@
 import { Helmet } from "react-helmet";
 import Swal from "sweetalert2";
 import { useLocation } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../Auth/AuthProvider";
 
 const Payment = () => {
+  const { user } = useContext(AuthContext);
+  const userEmail =user.email;
+  console.log(userEmail)
   const location = useLocation();
   const { totalPrice, cartItems } = location.state || {};
 
@@ -10,6 +15,7 @@ const Payment = () => {
     const paymentData = {
       totalAmount: totalPrice,
       productId: cartItems.map((item) => item._id).join(", "),
+      userInfo: userEmail
     };
 
     fetch("http://localhost:5000/payment", {

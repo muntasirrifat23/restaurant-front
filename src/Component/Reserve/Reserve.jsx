@@ -6,7 +6,7 @@ import { Helmet } from "react-helmet";
 
 const Reserve = () => {
   const [seats, setSeats] = useState("");
-  const [selectedDate, setSelectedDate] = useState("");
+  // const [selectedDate, setSelectedDate] = useState("");
 
 
   const currentDate = () => {
