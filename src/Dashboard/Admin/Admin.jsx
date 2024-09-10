@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { FaClipboardList, FaCommentDots, FaUsers, FaUtensils } from "react-icons/fa";
-import PayDetails from "./PayDetails";
 import Feedback from "./Feedback";
 import ReserveAdmin from "./ReserveAdmin";
 
@@ -76,7 +75,6 @@ const Admin = () => {
           </div>
         </div>
 
-          <PayDetails></PayDetails>
           <ReserveAdmin></ReserveAdmin>
           <Feedback></Feedback>
 

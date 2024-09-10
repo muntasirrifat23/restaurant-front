@@ -25,12 +25,16 @@ const Header = () => {
         <Link to="/users">Users</Link>
       </li>
       <li>
+        <Link to="/revenue">Revenue</Link>
+      </li>
+      <li>
         <Link to="/allItems">All Items</Link>
       </li>
       <li>
         <Link to="/addItems">Add Items</Link>
       </li>
     </p>
+    
   ) : (
     <p className="font-bold lg:flex text-xl">
       <li>

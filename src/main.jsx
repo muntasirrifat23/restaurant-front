@@ -22,6 +22,7 @@ import AddItems from "./Dashboard/AddItems/AddItems.jsx";
 import AllItems from "./Dashboard/AllItems/AllItems.jsx";
 import UpdateItems from "./Dashboard/UpdateItems/UpdateItems.jsx";
 import AdminPrivate from "./Dashboard/AdminPrivate/AdminPrivate.jsx";
+import Revenue from "./Dashboard/Revenue/Revenue.jsx";
 
 const router = createBrowserRouter([
   {
@@ -69,7 +70,7 @@ const router = createBrowserRouter([
         element: <PrivateRoute><Reserve></Reserve></PrivateRoute>,
       },
 
-      //
+      // Admin Dashboard
       {
         path: "/admin",
         element: <AdminPrivate><Admin></Admin> </AdminPrivate>,
@@ -77,6 +78,10 @@ const router = createBrowserRouter([
       {
         path: "/users",
         element: <Customer></Customer>,
+      },
+      {
+        path:"/revenue",
+        element:<Revenue></Revenue>
       },
       {
         path: "/allItems",
