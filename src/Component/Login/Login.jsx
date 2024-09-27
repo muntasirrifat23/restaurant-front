@@ -1,6 +1,6 @@
-import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, GithubAuthProvider, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, signInWithEmailAndPassword } from "firebase/auth";
 import app from "../../firebase.init";
-import { FaGithub } from "react-icons/fa";
+// import { FaGithub } from "react-icons/fa";
 import { FaGoogle } from "react-icons/fa6";
 import { useContext, useState } from "react";
 import { FaRegEye, FaEyeSlash } from "react-icons/fa";
@@ -12,7 +12,7 @@ import { Helmet } from "react-helmet";
 const Login = () => {
     const auth = getAuth(app);
     const provider = new GoogleAuthProvider();
-    const gitProvider = new GithubAuthProvider();
+    // const gitProvider = new GithubAuthProvider();
     const [googleUser, setGoogleUser] = useState(null);
     const [userError, setUserError] = useState('');
     const [show, setShow] = useState(false);
@@ -72,18 +72,18 @@ const Login = () => {
     }
 
     //Github Pop-up
-    const handleGithub = () => {
-        signInWithPopup(auth, gitProvider)
-            .then(r => {
-                const user = r.user;
-                setGoogleUser(user);
-                console.log(user);
-                navigate('/');
-            })
-            .catch((error) => {
-                console.log('Git Error', error.message);
-            })
-    }
+    // const handleGithub = () => {
+    //     signInWithPopup(auth, gitProvider)
+    //         .then(r => {
+    //             const user = r.user;
+    //             setGoogleUser(user);
+    //             console.log(user);
+    //             navigate('/');
+    //         })
+    //         .catch((error) => {
+    //             console.log('Git Error', error.message);
+    //         })
+    // }
 
     //Google Sign Out
     const googleOut = () => {
@@ -139,7 +139,7 @@ const Login = () => {
                                         <button className="btn btn-error mt-3 rounded-full bg-red-700 text-white text-lg" onClick={googleOut}>Sign Out</button> :
                                         <div className="mx-auto">
                                             <button onClick={handleSign} className="mx-auto mt-5 border-2 border-orange-700	rounded-full p-2 mr-4"> <FaGoogle className="text-orange-700"></FaGoogle></button>
-                                            <button onClick={handleGithub} className="mx-auto mt-5 border-2 border-black rounded-full p-2 bg-orange-"> <FaGithub className="text-black"></FaGithub></button>
+                                            {/* <button onClick={handleGithub} className="mx-auto mt-5 border-2 border-black rounded-full p-2 bg-orange-"> <FaGithub className="text-black"></FaGithub></button> */}
                                         </div>
 
                                     //user ? logout : sign in
