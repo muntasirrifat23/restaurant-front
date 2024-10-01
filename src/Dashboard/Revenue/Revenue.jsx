@@ -15,10 +15,12 @@ const Revenue = () => {
       });
   }, []);
 
-  const totalAmount = payDetails.reduce((total, pay) => {
+  // Total Amount
+  const totalAmount = payDetails.filter((pay) => pay.status === "VALID").reduce((total, pay) => {
     return total + (Number(pay.amount) || 0);
   }, 0);
 
+  // 30% Revenue
   const revenue = totalAmount * 0.3;
 
   const handlePayDelete = (id) => {

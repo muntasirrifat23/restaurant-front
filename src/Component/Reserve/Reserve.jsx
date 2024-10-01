@@ -21,13 +21,15 @@ const Reserve = () => {
     const today = new Date();
     const year = today.getFullYear();
     const month = String(today.getMonth() + 1).padStart(2, "0");
+    // Next 1 day
     const day = String(today.getDate() + 1).padStart(2, "0");
     return `${year}-${month}-${day}`;
   };
 
+  // Set date can select next 7 days
   const maxDate = () => {
     const today = new Date();
-    today.setDate(today.getDate() + 7); // Set max to 7 days from now
+    today.setDate(today.getDate() + 7); 
     const year = today.getFullYear();
     const month = String(today.getMonth() + 1).padStart(2, "0");
     const day = String(today.getDate()).padStart(2, "0");
@@ -38,7 +40,8 @@ const Reserve = () => {
     const options = [];
     for (let hour = 10; hour <= 22.5; hour++) {
       for (let minute = 0; minute < 60; minute += 60) {
-        let formattedHour = hour % 12 || 12; // Convert to 12-hour format
+        // 12-hour format
+        let formattedHour = hour % 12 || 12; 
         const period = hour < 12 ? "AM" : "PM";
         const time = `${String(formattedHour).padStart(2, "0")}:${String(minute).padStart(2, "0")} ${period}`;
         options.push(
