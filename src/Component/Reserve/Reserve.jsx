@@ -17,6 +17,7 @@ const Reserve = () => {
     note: "",
   });
 
+  // Current Date
   const currentDate = () => {
     const today = new Date();
     const year = today.getFullYear();
@@ -26,7 +27,7 @@ const Reserve = () => {
     return `${year}-${month}-${day}`;
   };
 
-  // Set date can select next 7 days
+  // Next 7 days
   const maxDate = () => {
     const today = new Date();
     today.setDate(today.getDate() + 7); 
@@ -36,6 +37,7 @@ const Reserve = () => {
     return `${year}-${month}-${day}`;
   };
 
+  // Time
   const handleTime = () => {
     const options = [];
     for (let hour = 10; hour <= 22.5; hour++) {
@@ -54,6 +56,7 @@ const Reserve = () => {
     return options;
   };
 
+  // Handle Seat
   const handleSeat = (e) => {
     const value = Number(e.target.value);
     if (value < 1 || value > 5) {
@@ -92,6 +95,17 @@ const Reserve = () => {
   const handleReserve = (e) => {
     e.preventDefault();
     const { name, phone, date, time, seat, email, note } = formValues;
+
+     // Check if phone number is exactly 11 digits
+    const phonePattern = /^\d{11}$/;
+    if (!phonePattern.test(phone)) {
+    Swal.fire({
+      icon: "warning",
+      title: "Invalid Phone Number",
+      text: "Phone number must be exactly 11 digits (Example:01234567890).",
+    });
+    return;
+  }
 
     const customer = { name, phone, date, time, seat, email, note };
     console.log(customer);

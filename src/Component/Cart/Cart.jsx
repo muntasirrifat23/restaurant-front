@@ -39,16 +39,27 @@ const Cart = () => {
     setPrice(totalPrice);
   };
 
+  //Cart Increment
   const handleIncrement = (id) => {
     const updatedCart = showCart.map((item) => {
       if (item._id === id) {
-        return { ...item, amount: item.amount + 1 };
+        if (item.amount < 10) { // Check if amount is less than 10
+          return { ...item, amount: item.amount + 1 };
+        } else {
+          Swal.fire({
+            title: "Warning",
+            text: "You can order single item maximum quantity of 10 ",
+            icon: "warning",
+            confirmButtonText: "OK",
+          });
+        }
       }
       return item;
     });
     setShowCart(updatedCart);
   };
 
+  //Cart Decrement
   const handleDecrement = (id) => {
     const updatedCart = showCart.map((item) => {
       if (item._id === id && item.amount > 1) {
@@ -135,9 +146,9 @@ const Cart = () => {
 
                   <td>
                     <div className="flex justify-center items-center">
-                    <button className="btnCart" onClick={() => handleDecrement(item._id)}>
+                      <button className="btnCart" onClick={() => handleDecrement(item._id)}>
                         -
-                      </button> 
+                      </button>
                       <span className="btnQuantity">{item.amount}</span>
                       <button className="btnCart" onClick={() => handleIncrement(item._id)}>
                         +
@@ -151,8 +162,7 @@ const Cart = () => {
                   </td>
 
                   <td>
-                    <button onClick={() => handleDelete(item._id)} className="btn btn-error btn-md delIcon"
-                    >
+                    <button onClick={() => handleDelete(item._id)} className="btn btn-error btn-md delIcon">
                       <FaTrashCan />
                     </button>
                   </td>
@@ -163,23 +173,23 @@ const Cart = () => {
 
           <div className="flex justify-center items-center gap-1 mt-5 font-semibold text-xl total p-4 text-white">
             Total Price of Your Food BDT : <FaBangladeshiTakaSign /> {price}
-            
           </div>
 
-            {/* Button */}
+          {/* Button */}
           <div className="lg:flex justify-around ">
-          <div>
-            <Link to='/items'>
-            <button className="payCart text-green-700 bg-white p-2 rounded-lg mx-auto text-center block mt-5 px-10 font-bold"> 
-            Add More Order
-            </button></Link>
-          </div>
+            <div>
+              <Link to='/items'>
+                <button className="payCart text-green-700 bg-white p-2 rounded-lg mx-auto text-center block mt-5 px-10 font-bold"> 
+                  Add More Order
+                </button>
+              </Link>
+            </div>
 
-          <div>
-          <button onClick={handlePayCart} className="payCart bg-green-700 text-white p-2 rounded-lg mx-auto text-center block mt-5 px-20 text-l">
-            Payment
-          </button>
-          </div>
+            <div>
+              <button onClick={handlePayCart} className="payCart bg-green-700 text-white p-2 rounded-lg mx-auto text-center block mt-5 px-20 text-l">
+                Payment
+              </button>
+            </div>
           </div>
 
         </div>
@@ -188,4 +198,4 @@ const Cart = () => {
   );
 };
 
-export default Cart;
+export default Cart;    

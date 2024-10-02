@@ -14,7 +14,8 @@ const Feedback = () => {
       });
   }, []);
 
-  const handlePayDelete = (id) => {
+  // Delete Single
+  const handleFeedbackDelete = (id) => {
     Swal.fire({
       title: "Are you sure?",
       text: "Delete this payment details",
@@ -33,7 +34,8 @@ const Feedback = () => {
     });
   };
 
-  const handlePayDeleteAll = () => {
+  //Delete All
+  const handleFeedbackDeleteAll = () => {
     Swal.fire({
       title: "Are you sure?",
       text: "Delete all payment details",
@@ -76,7 +78,7 @@ const Feedback = () => {
                   <td className="py-2 px-4 font-semibold">{pay.message}</td>
                   <td className="py-2 px-4 font-semibold">{pay.rating}</td>
                   <td className="py-2 px-4">
-                    <button onClick={() => handlePayDelete(pay._id)} className="btn btn-error btn-md">
+                    <button onClick={() => handleFeedbackDelete(pay._id)} className="btn btn-error btn-md">
                       <FaTrashCan />
                     </button>
                   </td>
@@ -86,7 +88,7 @@ const Feedback = () => {
           </table>
         </div>
         <div className="text-center mt-4">
-        <button onClick={handlePayDeleteAll} className="btn btn-error text-white text-center">Delete All User Feedback</button>
+        <button onClick={handleFeedbackDeleteAll} className="btn btn-error text-white text-center">Delete All User Feedback</button>
         </div>
 
       </div>

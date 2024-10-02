@@ -14,7 +14,8 @@ const ReserveAdmin = () => {
       });
   }, []);
 
-  const handlePayDelete = (id) => {
+  //Delete single
+  const handleReserveDelete = (id) => {
     Swal.fire({
       title: "Are you sure?",
       text: "Delete this reserve details",
@@ -33,7 +34,8 @@ const ReserveAdmin = () => {
     });
   };
 
-  const handlePayDeleteAll = () => {
+  //Delete All
+  const handleReserveDeleteAll = () => {
     Swal.fire({
       title: "Are you sure?",
       text: "Delete all reserve details",
@@ -84,7 +86,7 @@ const ReserveAdmin = () => {
                   <td className="py-2 px-4 font-semibold">{reserve.seat}</td>
                   <td className="py-2 px-4 font-semibold">{reserve.note}</td>
                   <td className="py-2 px-4">
-                    <button onClick={() => handlePayDelete(reserve._id)} className="btn btn-error btn-md">
+                    <button onClick={() => handleReserveDelete(reserve._id)} className="btn btn-error btn-md">
                       <FaTrashCan />
                     </button>
                   </td>
@@ -94,7 +96,7 @@ const ReserveAdmin = () => {
           </table>
         </div>
         <div className="text-center mt-4">
-        <button onClick={handlePayDeleteAll} className="btn btn-success text-white text-center">Delete All Reserve Details</button>
+        <button onClick={handleReserveDeleteAll} className="btn btn-success text-white text-center">Delete All Reserve Details</button>
         </div>
 
       </div>

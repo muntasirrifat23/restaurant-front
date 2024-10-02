@@ -23,6 +23,7 @@ const Revenue = () => {
   // 30% Revenue
   const revenue = totalAmount * 0.3;
 
+  // Delete Single
   const handlePayDelete = (id) => {
     Swal.fire({
       title: "Are you sure?",
@@ -42,6 +43,7 @@ const Revenue = () => {
     });
   };
 
+  //Delete All
   const handlePayDeleteAll = () => {
     Swal.fire({
       title: "Are you sure?",
