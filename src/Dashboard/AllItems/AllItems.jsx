@@ -9,19 +9,22 @@ const AllItems = () => {
     const items = useLoaderData();
     const foodItems = Array.isArray(items) ? items : [];
     const [search, setSearch] = useState('');
-    const show = () => { 
+
+    const show = () => {
         setShowAll(!showAll);
         if (!showAll) {
-            setDataLength(items.length);
+            setDataLength(foodItems.length); 
         } else {
             setDataLength(6);
         }
     };
+
     const handleSearch = (e) => {
         setSearch(e.target.value);
     };
+
     const filterItems = foodItems.filter(item =>
-        item.name.toLowerCase().includes(search.toLowerCase())
+        item.name && item.name.toLowerCase().includes(search.toLowerCase()) // Ensure item.name exists
     );
 
     return (
@@ -45,10 +48,10 @@ const AllItems = () => {
                     <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-4 m-6 lg:m-12">
                         {filterItems.length > 0 ? (
                             filterItems.slice(0, dataLength).map((item) => (
-                                <AllItemsCard key={item.id} item={item}></AllItemsCard>
+                                <AllItemsCard key={item._id} item={item}></AllItemsCard>
                             ))
                         ) : (
-                            <div className="text-center col-span-full text-red-600 font-semibold" >
+                            <div className="text-center col-span-full text-red-600 font-semibold">
                                 <p className="text-lg">Food is not available</p>
                             </div>
                         )}

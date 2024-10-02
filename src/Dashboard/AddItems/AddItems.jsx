@@ -56,14 +56,15 @@ const AddItems = () => {
              {/* Line 2 */}
              <div className="flex justify-between gap-4 text-black mt-4">
             <label className="input input-bordered flex items-center gap-2 w-full">
-              <input type="text" placeholder="New Food Short Details" name="short_details" required />
+              <input type="text" className="w-full" placeholder="New Food Short Details" name="short_details" required />
             </label>
           </div>
+          
 
            {/* Line 3 */}
           <div className="flex justify-between gap-4 text-black mt-4">
           <label className="input input-bordered flex items-center w-full">
-              <input type="text" placeholder="New Food Long Details" name="long_details" required />
+              <input type="text" className="w-full" placeholder="New Food Long Details" name="long_details" required />
             </label>
           </div>
 

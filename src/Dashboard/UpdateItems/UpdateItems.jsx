@@ -66,14 +66,14 @@ const UpdateItems = () => {
            {/* Line 2 */}
            <div className="flex justify-between text-black mt-4">
              <label className="input input-bordered flex items-center w-full">
-              <input type="text" placeholder="Update Food Short Details" name="short_details" required defaultValue={short_details}/>
+              <input type="text" className="w-full" placeholder="Update Food Short Details" name="short_details" required defaultValue={short_details}/>
               </label>
           </div>
 
            {/* Line 3 */}
           <div className="  text-black mt-4">
           <label className="input input-bordered flex items-center w-full">
-              <input type="text" placeholder="Update Food Long Details" name="long_details" required defaultValue={long_details} />
+              <input type="text" className="w-full" placeholder="Update Food Long Details" name="long_details" required defaultValue={long_details} />
             </label>
           </div>
 
