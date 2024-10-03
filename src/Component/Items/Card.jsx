@@ -11,7 +11,6 @@ import Rating from "react-rating";
 
 const Card = ({ item }) => {
   const { name, price, short_details, image, rating, id, not } = item;
-  
   const { user } = useContext(AuthContext);
   const [addedItems, setAddedItems] = useState([]);
   const navigate = useNavigate();
@@ -31,18 +30,15 @@ const Card = ({ item }) => {
   }, [user]);
 
   const handleCart = (item) => {
-    if(!user){
-      Swal.fire(
-        "Please Do login"
-      ).then(()=>{
-        navigate('/login')
-      })
+    if (!user) {
+      Swal.fire("Please Do login").then(() => {
+        navigate('/login');
+      });
     }
+
     if (user && user.email) {
       if (addedItems.includes(id)) {
-        Swal.fire(
-          "This item already added to the cart. Please check the cart page."
-        );
+        Swal.fire("This item already added to the cart. Please check the cart page.");
         return;
       }
 
@@ -74,8 +70,8 @@ const Card = ({ item }) => {
   return (
     <div>
       <div className={`card card-compact shadow-xl ${not ? 'bg-slate-300 notIn' : 'bg-lime-200'} border-4 border-b-lime-700`}>
-        {not && <div className="notText" >Out of Stock</div>}
-      <figure>
+        {not && <div className="notText">Out of Stock</div>}
+        <figure>
           <img src={image} alt="Food" className="rounded-xl p-4 cImage" />
         </figure>
         <div className="card-body">
@@ -84,8 +80,7 @@ const Card = ({ item }) => {
 
           <div className="flex mt-2 font-semibold justify-center text-center text-red-600">
             <p className="flex items-center text-center">
-              Price:
-              <FaBangladeshiTakaSign /> {price}
+              Price: <FaBangladeshiTakaSign /> {price}
             </p>
             <p>
               Rating: 
@@ -99,7 +94,6 @@ const Card = ({ item }) => {
             </p>
           </div>
 
-          {/* Details */}
           <div className="card-actions justify-center">
             <Link to={`/items/${id}`} className="flex gap-2 mx-2">
               <button className="btn bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white font-bold">
@@ -107,10 +101,10 @@ const Card = ({ item }) => {
               </button>
             </Link>
 
-            {/* Cart */}
             <button
               onClick={() => handleCart(item)}
-              className="btn addBtn bg-green-800 btn-primary text-white font-bold border-0 gap-2 mx-2" disabled={not}
+              className="btn addBtn bg-green-800 btn-primary text-white font-bold border-0 gap-2 mx-2" 
+              disabled={not}
             >
               Add To Cart <FaCartShopping />
             </button>
@@ -129,8 +123,7 @@ Card.propTypes = {
     short_details: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
     rating: PropTypes.string.isRequired,
-    item: PropTypes.string.isRequired,
-    not: PropTypes.string.isRequired,
+    not: PropTypes.bool.isRequired,
   }).isRequired,
 };
 

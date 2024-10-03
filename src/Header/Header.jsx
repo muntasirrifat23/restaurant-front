@@ -88,6 +88,7 @@ const Header = () => {
             </ul>
           </div>
           <img src={image} alt="" className="h-16 w-20 rounded-2xl" />
+          <p className="font-bold ml-2 text-xl ">Food Court</p>
         </div>
         {/* big */}
         <div className="navbar-center hidden lg:flex">

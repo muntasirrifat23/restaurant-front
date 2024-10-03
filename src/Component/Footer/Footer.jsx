@@ -25,6 +25,7 @@ const Footer = () => {
         {/* Footer Middle */}
         <nav className="mx-auto text-center">
           <div className="text-center mt-8">
+          <p className="font-bold mb-2 text-2xl">Food Court</p>
             <p>Head Office: House #29, Road #02, Sector #11</p>
             <p>Uttara, Dhaka, Bangladesh</p>
             <p>Phone: +8801234567890</p>
