@@ -43,7 +43,7 @@ const Cart = () => {
   const handleIncrement = (id) => {
     const updatedCart = showCart.map((item) => {
       if (item._id === id) {
-        if (item.amount < 10) { // Check if amount is less than 10
+        if (item.amount < 10) { 
           return { ...item, amount: item.amount + 1 };
         } else {
           Swal.fire({
