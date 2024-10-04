@@ -46,6 +46,9 @@ const Header = () => {
       <li>
         <Link to="/reserve">Reservation</Link>
       </li>
+      <li>
+        <Link to="/order">Orders</Link>
+      </li>
     </p>
   );
 

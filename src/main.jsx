@@ -23,6 +23,7 @@ import AllItems from "./Dashboard/AllItems/AllItems.jsx";
 import UpdateItems from "./Dashboard/UpdateItems/UpdateItems.jsx";
 import AdminPrivate from "./Dashboard/AdminPrivate/AdminPrivate.jsx";
 import Revenue from "./Dashboard/Revenue/Revenue.jsx";
+import Orders from "./Component/Orders/Orders.jsx";
 
 const router = createBrowserRouter([
   {
@@ -56,6 +57,10 @@ const router = createBrowserRouter([
       {
         path: "/payment",
         element: <Payment></Payment>,
+      },
+      {
+        path: "/order",
+        element: <Orders></Orders>,
       },
       {
         path: "/login",
