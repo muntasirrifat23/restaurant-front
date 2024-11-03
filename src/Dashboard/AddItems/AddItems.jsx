@@ -45,17 +45,17 @@ const AddItems = () => {
 
         <form onSubmit={handleAddItems}>
           <div className="flex justify-between gap-4 text-black mt-4 ">
-            <label className="input input-bordered flex items-center gap-2 w-full">
+            <label className="input input-bordered flex items-center gap-2 w-full bg-white">
               <input type="text" placeholder="New Food Name" name="name" required />
             </label>
-            <label className="input input-bordered flex items-center w-full">
+            <label className="input input-bordered flex items-center w-full bg-white">
               <input type="text" placeholder="New Food Price" name="price" required />
             </label>
           </div>
 
              {/* Line 2 */}
              <div className="flex justify-between gap-4 text-black mt-4">
-            <label className="input input-bordered flex items-center gap-2 w-full">
+            <label className="input input-bordered flex items-center gap-2 w-full bg-white">
               <input type="text" className="w-full" placeholder="New Food Short Details" name="short_details" required />
             </label>
           </div>
@@ -63,24 +63,24 @@ const AddItems = () => {
 
            {/* Line 3 */}
           <div className="flex justify-between gap-4 text-black mt-4">
-          <label className="input input-bordered flex items-center w-full">
+          <label className="input input-bordered flex items-center w-full bg-white">
               <input type="text" className="w-full" placeholder="New Food Long Details" name="long_details" required />
             </label>
           </div>
 
           {/* Line 4 */}
           <div className="flex justify-between gap-4 text-black mt-4">
-            <label className="input input-bordered flex items-center gap-2 w-full">
+            <label className="input input-bordered flex items-center gap-2 w-full bg-white">
               <input type="text" placeholder="New Food Rating" name="rating" required />
             </label>
-            <label className="input input-bordered flex items-center w-full">
+            <label className="input input-bordered flex items-center w-full bg-white">
               <input type="text" placeholder="New Food Origin" name="origin" required />
             </label>
           </div>
 
           {/* Line 5 */}
           <div className="gap-4 text-black mt-4">
-            <label className="input input-bordered flex items-center gap-2 w-full">
+            <label className="input input-bordered flex items-center gap-2 w-full bg-white">
               <input type="file" placeholder="New Food Image" name="image" required />
             </label>
           </div>
