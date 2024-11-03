@@ -39,11 +39,11 @@ const router = createBrowserRouter([
         path: "/items/:id",
         element: <Details></Details>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/items/${params.id}`),
+          fetch(`https://restaurant-backend-pearl.vercel.app/items/${params.id}`),
       },
       {
         path: "/items",
-        loader: () => fetch("http://localhost:5000/items"),
+        loader: () => fetch("https://restaurant-backend-pearl.vercel.app/items"),
         element: <Items></Items>,
       },
       {
@@ -90,13 +90,13 @@ const router = createBrowserRouter([
       },
       {
         path: "/allItems",
-        loader: () => fetch("http://localhost:5000/items"),
+        loader: () => fetch("https://restaurant-backend-pearl.vercel.app/items"),
         element: <AdminPrivate><AllItems></AllItems></AdminPrivate>,
       },
       {
         path: "/items/:id/update",
         element:<AdminPrivate> <UpdateItems></UpdateItems></AdminPrivate>,
-        loader: ({ params }) =>fetch(`http://localhost:5000/items/${params.id}/update`),
+        loader: ({ params }) =>fetch(`https://restaurant-backend-pearl.vercel.app/items/${params.id}/update`),
       },
       {
         path: "/addItems",

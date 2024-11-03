@@ -8,7 +8,7 @@ const Revenue = () => {
   const [payDetails, setPayDetails] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/paymentData")
+    fetch("https://restaurant-backend-pearl.vercel.app/paymentData")
       .then((res) => res.json())
       .then((data) => {
         setPayDetails(data);
@@ -34,8 +34,8 @@ const Revenue = () => {
       confirmButtonText: "Yes",
     }).then((result) => {
       if (result.isConfirmed) {
-        axios.delete(`http://localhost:5000/paymentData/${id}`).then((res) => {
-          console.log("Delete request successful:", res.data);
+        axios.delete(`https://restaurant-backend-pearl.vercel.app/paymentData/${id}`).then((res) => {
+          //console.log("Delete request successful:", res.data);
           const updatedPay = payDetails.filter((pay) => pay._id !== id);
           setPayDetails(updatedPay);
         });
@@ -54,8 +54,8 @@ const Revenue = () => {
       confirmButtonText: "Yes, delete all",
     }).then((result) => {
       if (result.isConfirmed) {
-        axios.delete("http://localhost:5000/paymentData").then((res) => {
-          console.log("Delete request successful:", res.data);
+        axios.delete("https://restaurant-backend-pearl.vercel.app/paymentData").then((res) => {
+          //console.log("Delete request successful:", res.data);
           setPayDetails([]);
         });
       }

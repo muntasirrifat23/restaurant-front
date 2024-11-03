@@ -27,7 +27,7 @@ const Payment = () => {
     try {
       setIsProcessing(true); 
 
-      const response = await fetch("http://localhost:5000/payment", {
+      const response = await fetch("https://restaurant-backend-pearl.vercel.app/payment", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(paymentData),
@@ -37,7 +37,7 @@ const Payment = () => {
 
       if (data.status === "SUCCESS") {
         window.open(data.redirectURL, "_blank");
-        console.log("Payment Data:", paymentData);
+        //console.log("Payment Data:", paymentData);
       } else {
         Swal.fire("Payment Failed", data.message, "error");
       }

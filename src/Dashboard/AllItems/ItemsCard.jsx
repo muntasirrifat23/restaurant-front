@@ -23,8 +23,8 @@ const ItemsCard = ({ item }) => {
       confirmButtonText: "Yes",
     }).then((result) => {
       if (result.isConfirmed) {
-        axios.delete(`http://localhost:5000/items/${_id}`).then((res) => {
-          console.log("Delete request successful:", res.data);
+        axios.delete(`https://restaurant-backend-pearl.vercel.app/items/${_id}`).then((res) => {
+          //console.log("Delete request successful:", res.data);
           const deleteItem = showItems.filter((item) => item._id !== _id);
           setShowItems(deleteItem);
           window.location.reload();

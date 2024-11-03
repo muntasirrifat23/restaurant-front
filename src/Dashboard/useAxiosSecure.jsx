@@ -4,7 +4,7 @@ import { useContext, useEffect } from "react";
 import { AuthContext } from "../Component/Auth/AuthProvider";
 
 const axiosSecure = axios.create({
-  baseURL: 'http://localhost:5000'
+  baseURL: 'https://restaurant-backend-pearl.vercel.app'
 });
 
 const useAxiosSecure = () => {

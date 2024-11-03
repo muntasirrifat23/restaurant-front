@@ -18,7 +18,7 @@ const Card = ({ item }) => {
   useEffect(() => {
     if (user && user.email) {
       axios
-        .get(`http://localhost:5000/cart?email=${user.email}`)
+        .get(`https://restaurant-backend-pearl.vercel.app/cart?email=${user.email}`)
         .then((res) => {
           const cartItems = res.data.map((cartItem) => cartItem.menuId);
           setAddedItems(cartItems);
@@ -53,7 +53,7 @@ const Card = ({ item }) => {
       };
 
       axios
-        .post("http://localhost:5000/cart", cartData)
+        .post("https://restaurant-backend-pearl.vercel.app/cart", cartData)
         .then((res) => {
           if (res.data.insertedId) {
             Swal.fire("Food Added To The Cart");

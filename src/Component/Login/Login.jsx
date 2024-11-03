@@ -28,7 +28,7 @@ const Login = () => {
         e.preventDefault();
         const email = e.target.email.value;
         const password = e.target.password.value;
-        console.log(email, password);
+        //console.log(email, password);
         setUserError('');
         if (password.length < 6) {
             setUserError("Password should be at least 6 character");
@@ -38,7 +38,7 @@ const Login = () => {
         //Auth Sign In
         signIn(email, password)
             .then(r => {
-                console.log(r);
+                //console.log(r);
                 setFormData({ email: '', password: '' }); // Reset
                 navigate('/');
             })
@@ -48,7 +48,7 @@ const Login = () => {
 
         signInWithEmailAndPassword(auth, email, password)
             .then(result => {
-                console.log(result);
+                //console.log(result);
                 setFormData({ email: '', password: '' }); // Reset form fields
                 navigate('/');
             })
@@ -63,11 +63,11 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 setGoogleUser(user);
-                console.log(user);
+                //console.log(user);
                 navigate('/');
             })
             .catch((error) => {
-                console.log('Google Error', error.message);
+                //console.log('Google Error', error.message);
             })
     }
 
@@ -77,11 +77,11 @@ const Login = () => {
     //         .then(r => {
     //             const user = r.user;
     //             setGoogleUser(user);
-    //             console.log(user);
+    //             //console.log(user);
     //             navigate('/');
     //         })
     //         .catch((error) => {
-    //             console.log('Git Error', error.message);
+    //             //console.log('Git Error', error.message);
     //         })
     // }
 
@@ -90,10 +90,10 @@ const Login = () => {
         signOut(auth)
             .then(result => {
                 setGoogleUser(null);
-                console.log(result);
+                //console.log(result);
             })
             .catch((error) => {
-                console.log('error happen', error.message);
+                //console.log('error happen', error.message);
             })
     }
 

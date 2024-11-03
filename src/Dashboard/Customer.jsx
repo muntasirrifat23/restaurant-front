@@ -25,7 +25,7 @@ const Customer = () => {
 
   // const[user, showUser] = useState([])
   // useEffect(()=>{
-  //   fetch('http://localhost:5000/user')
+  //   fetch('https://restaurant-backend-pearl.vercel.app/user')
   //   .then(res=>res.json())
   //   .then(data=> showUser(data))
   // },[])
@@ -39,7 +39,7 @@ const Customer = () => {
       confirmButtonText: "Yes",
     }).then((result) => {
       if (result.isConfirmed) {
-        axios.delete(`http://localhost:5000/user/${id}`).then((res) => {
+        axios.delete(`https://restaurant-backend-pearl.vercel.app/user/${id}`).then((res) => {
           console.log("Delete request successful:", res.data);
           refetch();
           Swal.fire({
@@ -57,7 +57,7 @@ const Customer = () => {
   const handleRole=(user)=>{
     axiosSecure.patch(`/user/admin/${user._id}`)
     .then(res=>{
-      console.log(res.data);
+      //console.log(res.data);
       if(res.data.modifiedCount>0){
         refetch();
         Swal.fire({

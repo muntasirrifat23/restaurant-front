@@ -29,9 +29,9 @@ const Feedback = () => {
           return;
       }
         const feedback ={name, message, rating};
-        console.log(feedback);
+        // console.log(feedback);
 
-        fetch('http://localhost:5000/feedback', {
+        fetch('https://restaurant-backend-pearl.vercel.app/feedback', {
           method: 'POST',
           headers: {
               'content-type': 'application/json'

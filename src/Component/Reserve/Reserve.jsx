@@ -108,9 +108,9 @@ const Reserve = () => {
   }
 
     const customer = { name, phone, date, time, seat, email, note };
-    console.log(customer);
+    //console.log(customer);
 
-    fetch("http://localhost:5000/reserve", {
+    fetch("https://restaurant-backend-pearl.vercel.app/reserve", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -119,7 +119,7 @@ const Reserve = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        //console.log(data);
         if (data.insertedId) {
           Swal.fire("Thank You For Reservation");
           // Clear the form

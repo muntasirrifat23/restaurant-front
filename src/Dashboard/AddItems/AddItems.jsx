@@ -15,13 +15,13 @@ const AddItems = () => {
     formData.append('rating', e.target.rating.value);
     formData.append('origin', e.target.origin.value);
     formData.append('image', e.target.image.files[0]);
-    fetch("http://localhost:5000/items", {
+    fetch("https://restaurant-backend-pearl.vercel.app/items", {
       method: "POST",
       body: formData,
     })
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
+      //console.log(data);
       if (data.insertedId) {
         Swal.fire("Added New Food").then(() => {
           navigate('/allItems');

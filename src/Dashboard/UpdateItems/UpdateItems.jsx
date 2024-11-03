@@ -18,9 +18,9 @@ const UpdateItems = () => {
     const origin = e.target.origin.value;
     const image = e.target.image.value;
     const updateItemDetails = { name, price, short_details, long_details, rating, origin, image };
-    console.log(updateItemDetails);
+    //console.log(updateItemDetails);
 
-    fetch(`http://localhost:5000/items/${_id}`, {
+    fetch(`https://restaurant-backend-pearl.vercel.app/items/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -29,7 +29,7 @@ const UpdateItems = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        //console.log(data);
         if (data.matchedCount ==1 ) {
           Swal.fire("Food Updated");
           navigate('/allItems');

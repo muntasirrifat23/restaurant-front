@@ -7,7 +7,7 @@ import ReserveAdmin from "./ReserveAdmin";
 const Admin = () => {
   const [adminShow, setAdminShow] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/admin-home")
+    fetch("https://restaurant-backend-pearl.vercel.app/admin-home")
       .then((res) => res.json())
       .then((data) => {
         setAdminShow(data);

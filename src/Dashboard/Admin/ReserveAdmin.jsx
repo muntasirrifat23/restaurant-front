@@ -7,7 +7,7 @@ const ReserveAdmin = () => {
   const [reserveDetails, setReserveAdmin] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/reserve')
+    fetch('https://restaurant-backend-pearl.vercel.app/reserve')
       .then(res => res.json())
       .then(data => {
         setReserveAdmin(data);
@@ -25,8 +25,8 @@ const ReserveAdmin = () => {
       confirmButtonText: "Yes",
     }).then((result) => {
       if (result.isConfirmed) {
-        axios.delete(`http://localhost:5000/reserve/${id}`).then((res) => {
-          console.log("Delete request successful:", res.data);
+        axios.delete(`https://restaurant-backend-pearl.vercel.app/reserve/${id}`).then((res) => {
+          //console.log("Delete request successful:", res.data);
           const updatedPay = reserveDetails.filter((reserve) => reserve._id !== id);
           setReserveAdmin(updatedPay);
         });
@@ -45,8 +45,8 @@ const ReserveAdmin = () => {
       confirmButtonText: "Yes, delete all",
     }).then((result) => {
       if (result.isConfirmed) {
-        axios.delete('http://localhost:5000/reserve').then((res) => {
-          console.log("Delete request successful:", res.data);
+        axios.delete('https://restaurant-backend-pearl.vercel.app/reserve').then((res) => {
+          //console.log("Delete request successful:", res.data);
           setReserveAdmin([]);
         });
       }

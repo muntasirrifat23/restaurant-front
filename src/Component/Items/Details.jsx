@@ -8,7 +8,7 @@ const Details = () => {
   const { id } = useParams();
   const [details, setDetails] = useState(null);
   useEffect(() => {
-    fetch(`http://localhost:5000/items/${id}`)
+    fetch(`https://restaurant-backend-pearl.vercel.app/items/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setDetails(data);

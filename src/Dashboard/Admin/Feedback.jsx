@@ -7,7 +7,7 @@ const Feedback = () => {
   const [feedbackDetails, setFeedback] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/feedback')
+    fetch('https://restaurant-backend-pearl.vercel.app/feedback')
       .then(res => res.json())
       .then(data => {
         setFeedback(data);
@@ -25,8 +25,8 @@ const Feedback = () => {
       confirmButtonText: "Yes",
     }).then((result) => {
       if (result.isConfirmed) {
-        axios.delete(`http://localhost:5000/feedback/${id}`).then((res) => {
-          console.log("Delete request successful:", res.data);
+        axios.delete(`https://restaurant-backend-pearl.vercel.app/feedback/${id}`).then((res) => {
+          //console.log("Delete request successful:", res.data);
           const updatedPay = feedbackDetails.filter((pay) => pay._id !== id);
           setFeedback(updatedPay);
         });
@@ -45,8 +45,8 @@ const Feedback = () => {
       confirmButtonText: "Yes, delete all",
     }).then((result) => {
       if (result.isConfirmed) {
-        axios.delete('http://localhost:5000/feedback').then((res) => {
-          console.log("Delete request successful:", res.data);
+        axios.delete('https://restaurant-backend-pearl.vercel.app/feedback').then((res) => {
+          //console.log("Delete request successful:", res.data);
           setFeedback([]);
         });
       }

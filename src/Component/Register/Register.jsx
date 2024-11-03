@@ -19,10 +19,10 @@ const Register = () => {
         const email = e.target.email.value;
         const password = e.target.password.value;
         const user = { name, email, password };
-        console.log(user);
+        //console.log(user);
         setUserError('');
 
-        fetch('http://localhost:5000/user', {
+        fetch('https://restaurant-backend-pearl.vercel.app/user', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -45,7 +45,7 @@ const Register = () => {
         //Auth Create User
         createUser(email, password)
             .then(result => {
-                console.log(result.user);
+                //console.log(result.user);
             })
             .catch(error => {
                 console.error(error);
@@ -54,13 +54,13 @@ const Register = () => {
         //Email-password auth
         createUserWithEmailAndPassword(auth, email, password)
             .then(result => {
-                console.log(result);
+                //console.log(result);
             })
             .catch(error => {
                 console.error(error);
                 setUserError(error.message);
             })
-        console.log("submit");
+        //console.log("submit");
     }
 
     return (

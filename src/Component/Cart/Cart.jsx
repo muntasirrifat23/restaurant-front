@@ -15,7 +15,7 @@ const Cart = () => {
 
   useEffect(() => {
     if (user && user.email) {
-      fetch(`http://localhost:5000/cart?email=${user.email}`)
+      fetch(`https://restaurant-backend-pearl.vercel.app/cart?email=${user.email}`)
         .then(res => res.json())
         .then((data) => {
           const initializedData = data.map((item) => ({
@@ -80,7 +80,7 @@ const Cart = () => {
       confirmButtonText: "Yes",
     }).then((result) => {
       if (result.isConfirmed) {
-        axios.delete(`http://localhost:5000/cart/${id}`).then((res) => {
+        axios.delete(`https://restaurant-backend-pearl.vercel.app/cart/${id}`).then((res) => {
           console.log("Delete request successful:", res.data);
           const updatedCart = showCart.filter((item) => item._id !== id);
           setShowCart(updatedCart);

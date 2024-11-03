@@ -11,7 +11,7 @@ const Orders = () => {
 
   useEffect(() => {
     if (user && user.email) {
-      fetch(`http://localhost:5000/paymentData?email=${user.email}`)
+      fetch(`https://restaurant-backend-pearl.vercel.app/paymentData?email=${user.email}`)
         .then((res) => res.json())
         .then((data) => {
           const validPayments = data.filter(
