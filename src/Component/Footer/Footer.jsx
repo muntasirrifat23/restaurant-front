@@ -9,7 +9,7 @@ import image from "../../../public/main-icon.png";
 
 const Footer = () => {
   return (
-    <div className="flex flex-col items-center justify-center p-10 bg-base-200 text-base-content">
+    <div className="flex flex-col items-center justify-center p-10 bg-white text-black">
       <footer className="footer w-full text-center">
         <nav className="mx-auto">
           <img src={image} alt="logo" className="w-16 mx-auto rounded-xl" />

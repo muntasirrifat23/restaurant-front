@@ -74,22 +74,22 @@ const Register = () => {
                     <form onSubmit={handleRegister} className="card-body">
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text font-bold">Name</span>
+                                <span className="label-text font-bold text-black">Name</span>
                             </label>
-                            <input type="text" name="name" placeholder="Enter Full Name" className="input input-bordered" required />
+                            <input type="text" name="name" placeholder="Enter Full Name" className="input input-bordered bg-white" required />
                         </div>
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text font-bold">Email</span>
+                                <span className="label-text font-bold text-black">Email</span>
                             </label>
-                            <input type="email" name="email" placeholder="Enter Valid Email" className="input input-bordered" required />
+                            <input type="email" name="email" placeholder="Enter Valid Email" className="input input-bordered bg-white" required />
                         </div>
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text font-bold">New  Password</span>
+                                <span className="label-text font-bold text-black">New  Password</span>
                             </label>
                             <p className="flex space-y-2">
-                                <input type={show ? "text" : "Password"} name="password" placeholder="Enter New Password" className="input input-bordered mr-4 " required />
+                                <input type={show ? "text" : "Password"} name="password" placeholder="Enter New Password" className="input input-bordered mr-4 bg-white" required />
                                 <span onClick={() => setShow(!show)} >
                                     <p className="text-2xl">
                                         {

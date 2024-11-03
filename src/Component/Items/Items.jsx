@@ -36,12 +36,12 @@ const Items = () => {
             <div className="grid">
                 <div className="flex justify-center w-full mt-28 lg:mt-28 items-center">
                     <label className="font-semibold text-red-800 mr-4 text-xl">Search Food: </label>
-                    <input 
+                    <input
                         type="text" 
                         placeholder="Search Your Favorite Food" 
-                        className="input input-bordered w-full max-w-xs" 
+                        className="input bg-white input-bordered w-full max-w-xs" 
                         value={search} 
-                        onChange={handleSearch} 
+                        onChange={handleSearch}
                     />
                 </div>
 

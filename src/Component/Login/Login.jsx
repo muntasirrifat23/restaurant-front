@@ -38,7 +38,7 @@ const Login = () => {
         //Auth Sign In
         signIn(email, password)
             .then(r => {
-                //console.log(r);
+                console.log(r);
                 setFormData({ email: '', password: '' }); // Reset
                 navigate('/');
             })
@@ -48,7 +48,7 @@ const Login = () => {
 
         signInWithEmailAndPassword(auth, email, password)
             .then(result => {
-                //console.log(result);
+                console.log(result);
                 setFormData({ email: '', password: '' }); // Reset form fields
                 navigate('/');
             })
@@ -67,7 +67,7 @@ const Login = () => {
                 navigate('/');
             })
             .catch((error) => {
-                //console.log('Google Error', error.message);
+                console.log('Google Error', error.message);
             })
     }
 
@@ -90,10 +90,10 @@ const Login = () => {
         signOut(auth)
             .then(result => {
                 setGoogleUser(null);
-                //console.log(result);
+                console.log(result);
             })
             .catch((error) => {
-                //console.log('error happen', error.message);
+                console.log('error happen', error.message);
             })
     }
 
@@ -109,18 +109,18 @@ const Login = () => {
                         <form onSubmit={handleLogIn} className="card-body">
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text font-bold">Email</span>
+                                    <span className="label-text font-bold text-black">Email</span>
                                 </label>
-                                <input type="email" name="email" placeholder="Enter Email" className="input input-bordered" required />
+                                <input type="email" name="email" placeholder="Enter Email" className="input input-bordered bg-white" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text font-bold ">Password</span>
+                                    <span className="label-text font-bold text-black">Password</span>
                                 </label>
 
                                 <p className="flex space-y-2">
 
-                                    <input type={show ? "text" : "password"} name="password" placeholder="Enter Password" className="input input-bordered mr-4" required />
+                                    <input type={show ? "text" : "password"} name="password" placeholder="Enter Password" className="input input-bordered mr-4 bg-white" required />
                                     <span onClick={() => setShow(!show)} >
                                         <p className="text-2xl">
                                             {

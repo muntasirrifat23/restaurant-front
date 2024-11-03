@@ -48,7 +48,7 @@ const Feedback = () => {
           })
     }
   return (
-    <div className='m-4 lg:m-12 mt-14' >
+    <div className='m-4 lg:m-12 mt-14 bg' >
     <hr className='border-red-800 mx-auto' style={{ width: '40%' }} />
     <small className="text-center text-red-800">
     <p> Enhancing Your Dining Experience </p>
@@ -62,14 +62,14 @@ const Feedback = () => {
     
     <div className="border-2 bg-blue-600  text-center rounded-xl">  
       <form onSubmit={handleFeedback} >
-        <div className="text-black mt-4 text-center justify-center items-center">
-          <label className="input input-bordered flex items-center gap-2 m-10">
+        <div className="text-black  mt-4 text-center justify-center items-center">
+          <label className="input bg-white input-bordered flex items-center gap-2 m-10">
             <input type="text" placeholder="Your Full Name" name="name" required />
           </label>
-          <label className="input input-bordered flex items-center m-10">
+          <label className="input bg-white input-bordered flex items-center m-10">
             <input type="text" className="w-full" placeholder="Give Us Your Feedback" name="message" required />
           </label>
-          <label className="input input-bordered flex items-center m-10">
+          <label className="input bg-white input-bordered flex items-center m-10">
             <input type="number" className="w-full" placeholder="Give Us Your Rating Number" name="rating" required onChange={handleRating} value={doRating}/>
           </label>
         </div>

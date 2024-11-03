@@ -31,10 +31,22 @@ const Review = () => {
         </p>
       </div>
 
-      <div className="bg-base-300 ">
+      <div>
         <Swiper
-          slidesPerView={4}
-          spaceBetween={30}
+          breakpoints={{
+            640: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            768: {
+              slidesPerView: 3,
+              spaceBetween: 30,
+            },
+            1024: {
+              slidesPerView: 4,
+              spaceBetween: 40,
+            },
+          }}
           autoplay={{
             delay: 3000,
             disableOnInteraction: false,
@@ -62,15 +74,15 @@ const Review = () => {
                   <Rating
                     className="text-2xl mb-8"
                     initialRating={review.rating}
-                    emptySymbol={<FaRegStar className="text-red-800" />}
-                    placeholderSymbol={<FaRegStar className="text-red-800" />}
-                    fullSymbol={<FaStar className="text-red-800" />}
+                    emptySymbol={<FaRegStar className="text-red-600" />}
+                    placeholderSymbol={<FaRegStar className="text-red-600" />}
+                    fullSymbol={<FaStar className="text-red-600" />}
                     readonly
                   />
                 </p>
                 <p className="mb-4">{review.review}</p>
                 <hr />
-                <p className="text-center font-bold text-black">
+                <p className="text-center font-bold text-black text-xl">
                   {review.name}
                 </p>
               </div>
