@@ -43,9 +43,26 @@ const router = createBrowserRouter([
       },
       {
         path: "/items",
-        loader: () => fetch("https://restaurant-backend-pearl.vercel.app/items"),
+        loader: async () => {
+            try {
+                const response = await fetch("https://restaurant-backend-pearl.vercel.app/items");
+                if (!response.ok) {
+                    throw new Error("Network response was not ok");
+                }
+                return await response.json();
+            } catch (error) {
+                console.error("Failed to fetch items:", error);
+                return []; // Return an empty array or handle error as appropriate
+            }
+        },
         element: <Items></Items>,
-      },
+    },
+    
+      // {
+      //   path: "/items",
+      //   loader: () => fetch("https://restaurant-backend-pearl.vercel.app/items"),
+      //   element: <Items></Items>,
+      // },
       {
         path: "/cart",
         element: (

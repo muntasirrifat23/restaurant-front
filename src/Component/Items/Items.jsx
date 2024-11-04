@@ -9,11 +9,11 @@ const Items = () => {
     const items = useLoaderData();
     const foodItems = Array.isArray(items) ? items : [];
     const [search, setSearch] = useState('');
-    
-    const show = () => { 
+
+    const show = () => {
         setShowAll(!showAll);
         if (!showAll) {
-            setDataLength(items.length);
+            setDataLength(foodItems.length);
         } else {
             setDataLength(6);
         }
@@ -23,7 +23,6 @@ const Items = () => {
         setSearch(e.target.value);
     };
 
-    // Adding check for undefined 'name'
     const filterItems = foodItems.filter(item =>
         item.name && item.name.toLowerCase().includes(search.toLowerCase())
     );
