@@ -75,9 +75,9 @@ const Footer = () => {
       </footer>
 
       {/* Copyright Section */}
-      {/* <aside className="mt-6 text-center">
+      <aside className="mt-6 text-center">
         <p>Copyright © 2024 - All rights reserved by Food Court Ltd.</p>
-      </aside> */}
+      </aside>
     </div>
   );
 };
